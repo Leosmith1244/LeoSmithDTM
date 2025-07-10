@@ -266,6 +266,37 @@
         gap: 0.5rem;
       }
     }
+        /* Hero Button Styles */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
+}
+
+.btn-outline:hover {
+    background: var(--yellow);
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn, .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}
   </style>
 </head>
 <body>
