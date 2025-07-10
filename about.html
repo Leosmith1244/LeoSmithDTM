@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Leo Smith, DTM | Leadership Speaker & Mentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    /* === TOASTMASTERS BRAND COLORS === */
+    :root {
+      --maroon: #772432;
+      --blue: #004165;
+      --gray: #A9B2B1;
+      --yellow: #F2DF74;
+      --white: #FFFFFF;
+      --black: #000000;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--black);
+      margin: 0;
+      padding: 0;
+      background: var(--white);
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    /* Hero Section */
+    .about-hero {
+      background: linear-gradient(rgba(0, 65, 101, 0.8), rgba(0, 65, 101, 0.8)), 
+                  url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .about-section {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .badges img {
+      width: 80px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .badges img:hover {
+      transform: scale(1.1);
+    }
+
+    .about-content {
+      flex: 2;
+    }
+
+    .section-title {
+      color: var(--blue);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: var(--yellow);
+      margin: 1rem 0;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 3rem auto;
+    }
+
+    .timeline:before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--yellow);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .timeline-content:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--maroon);
+      border-radius: 50%;
+      top: 30px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content:after {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content:after {
+      left: -10px;
+    }
+
+    .timeline-date {
+      font-weight: bold;
+      color: var(--maroon);
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .testimonial:before {
+      content: '"';
+      font-size: 5rem;
+      color: var(--yellow);
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      opacity: 0.3;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      color: var(--blue);
+      margin-top: 1rem;
+    }
+
+    .cta-section {
+      background: var(--blue);
+      color: white;
+      padding: 3rem;
+      text-align: center;
+      border-radius: 8px;
+      margin: 3rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--blue);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--yellow);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .about-section {
+        flex-direction: column;
+      }
+
+      .about-image {
+        margin-bottom: 2rem;
+      }
+
+      .timeline:before {
+        left: 31px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+
+      .timeline-content:after {
+        left: 21px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Leo Smith, DTM</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="authentic-leadership.html">Leadership Series</a>
+                <a href="about.html">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>About Leo Smith, DTM</h1>
+            <p>Distinguished Toastmaster • Leadership Mentor • Inspirational Speaker</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="about-section">
+            <div class="about-image">
+                <img src="images/leo.jpeg" alt="Leo Smith, DTM">
+                <div class="badges">
+                    <img src="images/dtm-badge.png" alt="Distinguished Toastmaster Badge" title="Distinguished Toastmaster">
+                    <img src="images/member-badge.png" alt="Toastmasters Member Badge" title="Toastmasters International Member">
+                </div>
+            </div>
+            <div class="about-content">
+                <h2 class="section-title">My Leadership Journey</h2>
+                <p>Leo Smith, DTM, is a distinguished leader, communicator, and mentor with a passion for empowering individuals and organizations through effective communication and leadership. As a Distinguished Toastmaster (DTM), the highest educational achievement in Toastmasters International, Leo has demonstrated exceptional dedication to personal growth and the advancement of others.</p>
+                <p>With extensive experience in various leadership roles within Toastmasters District 106, including past positions as a club officer and district leader, Leo has guided numerous clubs to achieve excellence through the Distinguished Club Program (DCP).</p>
+                <p>A dynamic public speaker, Leo captivates audiences with engaging, purpose-driven speeches that inspire action and foster collaboration. His expertise spans crafting compelling narratives, delivering impactful presentations, and mentoring emerging leaders to unlock their potential.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title" style="text-align: center;">My Toastmasters Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2015</div>
+                        <h3>Joined Toastmasters</h3>
+                        <p>Took the first step toward leadership excellence by joining my first Toastmasters club, beginning a transformative journey.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017</div>
+                        <h3>Club President</h3>
+                        <p>Led my club to Distinguished status while serving as President, developing skills in team leadership and strategic planning.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3>Area Director</h3>
+                        <p>Supported multiple clubs as Area Director, helping them achieve their educational and membership goals.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h3>District Leadership</h3>
+                        <p>Served as Public Relations Manager for District 106, working alongside District Director Matthew Villella to promote Toastmasters' mission.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>DTM Achievement</h3>
+                        <p>Earned the Distinguished Toastmaster designation, the highest recognition in Toastmasters International.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title" style="text-align: center;">Professional Impact</h2>
+            <div class="about-content">
+                <p>As the Public Relations Manager for District 106, alongside District Director Matthew Villella, Leo has spearheaded innovative initiatives, such as workshops tailored for workforce skill development, blending Toastmasters' proven methodologies with modern leadership frameworks like the 3C Leadership model: Communicate, Collaborate, Catalyze.</p>
+                <p>Beyond Toastmasters, Leo is a seasoned professional whose career is marked by a commitment to community engagement and professional excellence. His leadership extends to designing high-impact seminars, including a $4,500 leadership workshop that equips businesses with actionable strategies for today's dynamic workplace.</p>
+                <p>Known for his approachable yet authoritative style, Leo combines strategic insight with a genuine passion for helping others succeed. Whether leading a club to new heights, mentoring a first-time speaker, or driving district-wide growth, Leo Smith embodies the heart of a thriving Toastmasters community, leaving a lasting impact on all who have the privilege of working with him.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title" style="text-align: center;">What People Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Leo transformed our club with his insightful coaching. His ability to identify and nurture potential is unmatched. Under his guidance, we achieved President's Distinguished status for the first time in years."</p>
+                    <div class="testimonial-author">- Sarah Johnson, Club Secretary</div>
+                </div>
+                <div class="testimonial">
+                    <p>"As a mentor, Leo has this incredible ability to make complex communication concepts simple and actionable. My confidence as a speaker grew exponentially after just a few sessions with him."</p>
+                    <div class="testimonial-author">- Michael Chen, Toastmasters Member</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The leadership workshop Leo conducted for our management team was worth every penny of the $4,500 investment. We implemented his 3C model and saw immediate improvements in team collaboration."</p>
+                    <div class="testimonial-author">- David Rodriguez, Corporate Client</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Transform Your Leadership?</h2>
+            <p>Whether you're looking to improve your public speaking, enhance your leadership skills, or bring professional development to your organization, I can help.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="authentic-leadership.html">Leadership Series</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p>&copy; 2025 Leo Smith, DTM. All rights reserved.</p>
+    </footer>
+</body>
+</html>
