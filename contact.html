@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Leo Smith, DTM | Toastmasters Leader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    /* Inherit all existing styles from your style.txt */
+    :root {
+        --maroon: #772432;
+        --blue: #004165;
+        --gray: #A9B2B1;
+        --yellow: #F2DF74;
+        --white: #FFFFFF;
+        --black: #000000;
+    }
+
+    /* Contact Page Specific Styles */
+    .contact-hero {
+        background: linear-gradient(rgba(119, 36, 50, 0.8), rgba(119, 36, 50, 0.8)), 
+                    url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 5rem 1rem;
+        text-align: center;
+    }
+
+    .contact-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+    }
+
+    .contact-info {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h3 {
+        color: var(--maroon);
+        margin-top: 0;
+    }
+
+    .contact-method {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-method i {
+        color: var(--blue);
+        margin-right: 10px;
+    }
+
+    .contact-form {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid var(--gray);
+        border-radius: 4px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .form-group textarea {
+        min-height: 150px;
+    }
+
+    .submit-btn {
+        background: var(--blue);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: var(--maroon);
+        transform: translateY(-3px);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        color: var(--blue);
+        font-size: 1.5rem;
+        transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+        color: var(--maroon);
+    }
+
+    @media (max-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Leo Smith, DTM</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="authentic-leadership.html">Authentic Leadership</a>
+                <a href="dynamic-leadership.html">Dynamic Leadership</a>
+                <a href="engaging-humor.html">Engaging Humor</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Let's Connect</h1>
+            <p>I'd love to hear from you about Toastmasters, leadership, or public speaking opportunities</p>
+        </div>
+    </section>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            
+            <div class="contact-method">
+                <h4><i class="fas fa-envelope"></i> Email</h4>
+                <p><a href="mailto:leo.w.smith@gmail.com">leo.w.smith@gmail.com</a></p>
+            </div>
+            
+            <div class="contact-method">
+                <h4><i class="fas fa-phone"></i> Phone</h4>
+                <p><a href="tel:651-600-0531">(651) 600-0531</a></p>
+            </div>
+            
+            <div class="contact-method">
+                <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                <p>Minneapolis-St. Paul Area, MN</p>
+            </div>
+            
+            <div class="contact-method">
+                <h4><i class="fas fa-clock"></i> Availability</h4>
+                <p>Monday-Friday: 9am-5pm</p>
+                <p>Weekends: By appointment</p>
+            </div>
+            
+            <h3>Connect Socially</h3>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.toastmasters.org/" target="_blank"><i class="fas fa-comments"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3>Send Me a Message</h3>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="authentic-leadership.html">Authentic Leadership</a>
+            <a href="dynamic-leadership.html">Dynamic Leadership</a>
+            <a href="engaging-humor.html">Engaging Humor</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2025 Leo Smith, DTM. All rights reserved.</p>
+    </footer>
+</body>
+</html>
