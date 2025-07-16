@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leo Smith, DTM, delivers inspiring leadership speeches on purpose-driven leadership, emotional intelligence, and crisis management.">
+    <meta name="keywords" content="leadership, speeches, emotional intelligence, purpose-driven, crisis leadership, Leo Smith">
+    <title>Leo Smith, DTM - Leadership Speeches</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        /* === TOASTMASTERS BRAND COLORS === */
+        :root {
+            --maroon: #772432;
+            --blue: #004165;
+            --gray: #A9B2B1;
+            --yellow: #F2DF74;
+            --white: #FFFFFF;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--blue);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--yellow);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 65, 101, 0.8), rgba(0, 65, 101, 0.8)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            color: var(--blue);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--yellow);
+            margin: 1rem auto;
+        }
+
+        /* Speech Cards */
+        .speeches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .speech-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .speech-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .speech-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .speech-content {
+            padding: 1.5rem;
+        }
+
+        .speech-content h3 {
+            color: var(--maroon);
+            margin-top: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--blue);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+
+        /* Individual Speech Pages */
+        .speech-hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .speech-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(119, 36, 50, 0.8);
+        }
+
+        .speech-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .speech-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .speech-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .speech-content h2 {
+            color: var(--blue);
+        }
+
+        .speech-content h3 {
+            color: var(--maroon);
+        }
+
+        .speech-content ul {
+            margin-left: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Hero Button Enhancements */
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--yellow);
+            color: var(--yellow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--yellow);
+            color: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Animated scroll prompt */
+        .scroll-prompt {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            opacity: 0.8;
+            animation: bounce 2s infinite;
+        }
+
+        .chevron {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            margin-top: 5px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn, .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .about-image .hero-buttons {
+            background: rgba(255,255,255,0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Leo Smith, DTM</a>
+            <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="leadership-speeches.html">Leadership Speeches</a>
+                    <a href="authentic-leadership.html">Authentic Leadership</a>
+                    <a href="dynamic-leadership.html">Dynamic Leadership</a>
+                    <a href="engaging-humor.html">Engaging Humor</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Leadership Speeches</h1>
+                <p>Inspiring action through powerful communication and purpose-driven leadership</p>
+                <div class="hero-buttons">
+                    <a href="#speeches" class="btn btn-outline">Explore Speeches</a>
+                    <a href="about.html" class="btn btn-outline">Meet Leo</a>
+                    <a href="#discover" class="btn btn-outline">Discover More</a>
+                </div>
+            </div>
+            <div class="scroll-prompt" role="button" aria-label="Scroll down">
+                <span>Scroll</span>
+                <svg class="chevron" viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
+                </svg>
+            </div>
+        </section>
+
+         <div class="container" id="speeches">
+        <section class="section">
+            <h2 class="section-title">Featured Speeches</h2>
+            <div class="speeches">
+                <div class="speech-card">
+                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="speech-content">
+                        <h3>Inspiring Action Through Purpose-Driven Leadership</h3>
+                        <p>Discover how to ignite passion and loyalty by leading with purpose rather than just tasks.</p>
+                        <a href="#inspiring-action" class="btn">Read Speech</a>
+                    </div>
+                </div>
+                <div class="speech-card">
+                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                    <div class="speech-content">
+                        <h3>Leading with Emotional Intelligence</h3>
+                        <p>Learn how empathy and self-awareness can transform your leadership and build unstoppable teams.</p>
+                        <a href="#emotional-intelligence" class="btn">Read Speech</a>
+                    </div>
+                </div>
+                <div class="speech-card">
+                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                    <div class="speech-content">
+                        <h3>Leading Through Crisis with Purpose</h3>
+                        <p>Master the art of crisis leadership with clear communication and focused priorities.</p>
+                        <a href="#crisis-leadership" class="btn">Read Speech</a>
+                    </div>
+                </div>
+                <div class="speech-card">
+                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                    <div class="speech-content">
+                        <h3>Embracing People-Centered Leadership</h3>
+                        <p>Create workplaces where people flourish through vulnerability, transparency, and recognition.</p>
+                        <a href="#people-centered" class="btn">Read Speech</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="purpose-driven" class="section">
+            <div class="speech-hero" style="background-image: url('purpose-driven.webp');">
+                <div class="speech-hero-content">
+                    <h1>Inspiring Action Through Purpose-Driven Leadership</h1>
+                    <p>True leadership begins with a clear sense of why—a purpose that resonates deeply, unites teams, and drives meaningful action.</p>
+                </div>
+            </div>
+            <div class="container speech-content">
+                <h2>Introduction</h2>
+                <p><strong>Attention:</strong> Imagine a world where every leader you admire doesn't just tell you what they do, but why they do it—a spark that ignites passion and loyalty in everyone around them. Simon Sinek's Golden Circle shows us how this simple shift in focus can transform the way we lead and inspire.</p>
+                <p><strong>Thesis:</strong> True leadership begins with a clear sense of why—a purpose that resonates deeply, unites teams, and drives meaningful action.</p>
+                <p><strong>Preview:</strong> Today, we'll explore the problem of leadership that lacks purpose, how embracing a "why"-driven approach can transform your impact, and the vibrant future that awaits when you lead with inspiration.</p>
+                <p><strong>Shared Value/s:</strong> We all want to be part of something bigger than ourselves—whether it's a team, a company, or a cause. We value leaders who inspire us not just to work, but to believe in a shared vision that fuels our passion and purpose.</p>
+                <p><strong>Transition:</strong> Let's start by examining why so many leaders struggle to connect and inspire.</p>
+                <h2>Body</h2>
+                <h3>Need [Problem - Enemy]</h3>
+                <p>Too many leaders focus on what they do or how they do it, leaving their teams uninspired and disconnected.</p>
+                <ul>
+                    <li>Without a clear "why," employees feel like cogs in a machine, leading to disengagement and turnover. Studies show 70% of workers feel unmotivated due to a lack of purpose.</li>
+                    <li>This approach creates transactional cultures where loyalty wanes, and innovation stalls.</li>
+                    <li>The enemy here is superficial leadership—relying on tasks and metrics without a compelling vision to unite people.</li>
+                </ul>
+                <p><strong>Transition:</strong> So, how do we defeat this enemy of disconnection? By leading with purpose.</p>
+                <h3>Satisfaction [General Solution]</h3>
+                <p>Leaders must start with why—articulating a clear, emotional purpose that resonates with their team.</p>
+                <ul>
+                    <li>Define your organization's core belief. For example, Apple's "why" is to challenge the status quo, not just to make computers.</li>
+                    <li>Communicate this purpose consistently, using stories and examples that connect emotionally.</li>
+                    <li>Empower your team to align their work with this vision, fostering ownership and creativity.</li>
+                    <li>Leaders themselves must embody this "why" through actions, building trust and authenticity.</li>
+                </ul>
+                <p><strong>Transition:</strong> Imagine what happens when this purpose-driven approach takes root.</p>
+                <h3>Visualization [Resulting Situation]</h3>
+                <p>Picture a workplace buzzing with energy, where every team member wakes up eager to contribute to a shared mission. Teams collaborate seamlessly, not because they're told to, but because they believe in the cause. Ideas flow freely, and challenges become opportunities to innovate. Your leadership becomes a beacon, drawing talent and loyalty like moths to a flame, creating a legacy of impact that echoes beyond the office walls.</p>
+                <p><strong>Transition:</strong> This vibrant future is within reach, and it starts with a few simple steps.</p>
+                <h2>Conclusion</h2>
+                <p><strong>Summary:</strong> We've seen how a lack of purpose stifles leadership and disengages teams. By embracing a "why"-driven approach, you can inspire action and build a culture of passion and innovation.</p>
+                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
+                <ul>
+                    <li>Take 10 minutes this week to write down your personal or organizational "why." What belief drives you?</li>
+                    <li>Share this purpose with your team in your next meeting, using a story that makes it real.</li>
+                    <li>Ask one colleague how they connect their work to this vision, and listen to their perspective.</li>
+                </ul>
+                <p><strong>Close:</strong> Let's lead not just with tasks, but with a purpose that lights the way. Be the leader who doesn't just manage, but inspires a movement—one heart, one team, one "why" at a time.</p>
+            </div>
+        </section>
+
+        <section id="emotional-intelligence" class="section">
+            <div class="speech-hero" style="background-image: url('emotional-intelligence.webp');">
+                <div class="speech-hero-content">
+                    <h1>Leading with Emotional Intelligence</h1>
+                    <p>Leadership thrives not on authority, but on emotional intelligence—empathy, self-awareness, and connection that build unstoppable teams.</p>
+                </div>
+            </div>
+            <div class="container speech-content">
+                <h2>Introduction</h2>
+                <p><strong>Attention:</strong> Picture a leader who walks into a tense meeting, senses the unspoken fears, and with a few empathetic words, transforms conflict into collaboration. That's the power of emotional intelligence, as Daniel Goleman teaches us.</p>
+                <p><strong>Thesis:</strong> Leadership thrives not on authority, but on emotional intelligence—empathy, self-awareness, and connection that build unstoppable teams.</p>
+                <p><strong>Preview:</strong> We'll uncover the problem of emotionally disconnected leadership, how emotional intelligence can bridge that gap, and the thriving workplace it creates.</p>
+                <p><strong>Shared Value/s:</strong> We all crave leaders who see us, hear us, and understand us. We value workplaces where trust and collaboration flourish, making every challenge feel surmountable.</p>
+                <p><strong>Transition:</strong> Let's first confront the enemy of disconnected leadership.</p>
+                <h2>Body</h2>
+                <h3>Need [Problem - Enemy]</h3>
+                <p>Leadership that ignores emotions creates fractured teams and missed opportunities.</p>
+                <ul>
+                    <li>Without empathy, conflicts escalate, and morale plummets—studies show 50% of employees leave due to poor emotional connections with leaders.</li>
+                    <li>Leaders who lack self-awareness react impulsively, eroding trust and stifling innovation.</li>
+                    <li>The enemy is emotional blindness, leaving teams feeling undervalued and unheard.</li>
+                </ul>
+                <p><strong>Transition:</strong> The solution lies in cultivating emotional intelligence.</p>
+                <h3>Satisfaction [General Solution]</h3>
+                <p>Leaders must harness emotional intelligence to connect, inspire, and lead effectively.</p>
+                <ul>
+                    <li>Practice self-awareness: Reflect daily on your emotions and triggers to stay grounded.</li>
+                    <li>Show empathy: Listen actively to your team's concerns, validating their feelings before solving problems.</li>
+                    <li>Build relationships: Foster trust through transparent communication and genuine recognition.</li>
+                    <li>Model emotional resilience, showing your team how to navigate challenges with calm and clarity.</li>
+                </ul>
+                <p><strong>Transition:</strong> Imagine the world this creates for you and your team.</p>
+                <h3>Visualization [Resulting Situation]</h3>
+                <p>Envision a workplace where every voice is heard, where conflicts spark growth rather than division. Your team moves as one, bound by trust and mutual respect, tackling challenges with confidence. Your leadership radiates warmth, drawing people together like a hearth on a winter's night, creating a culture where everyone thrives.</p>
+                <p><strong>Transition:</strong> This future is possible, and it starts with small, intentional actions.</p>
+                <h2>Conclusion</h2>
+                <p><strong>Summary:</strong> Emotionally disconnected leadership breeds disengagement, but emotional intelligence fosters trust and collaboration. By prioritizing empathy and self-awareness, you can transform your team.</p>
+                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
+                <ul>
+                    <li>Tonight, journal about a recent leadership moment—how did your emotions influence your actions?</li>
+                    <li>In your next team interaction, ask a colleague how they're feeling and listen without interrupting.</li>
+                    <li>Recognize one team member's contribution publicly this week to build connection.</li>
+                </ul>
+                <p><strong>Close:</strong> Lead with your heart as much as your head. Be the leader who doesn't just command, but connects—creating a team that's not just strong, but unstoppable.</p>
+            </div>
+        </section>
+
+        <section id="crisis-leadership" class="section">
+            <div class="speech-hero" style="background-image: url('crisis-leadership.webp');">
+                <div class="speech-hero-content">
+                    <h1>Leading Through Crisis with Purpose</h1>
+                    <p>Effective crisis leadership hinges on clear communication, focused priorities, and an unwavering sense of purpose, turning chaos into opportunity.</p>
+                </div>
+            </div>
+            <div class="container speech-content">
+                <h2>Introduction</h2>
+                <p><strong>Attention:</strong> In the chaos of a crisis, great leaders don't just survive—they shine, guiding their teams with clarity and purpose, as outlined in Crisis Leadership in 2025. Picture yourself as that beacon in the storm.</p>
+                <p><strong>Thesis:</strong> Effective crisis leadership hinges on clear communication, focused priorities, and an unwavering sense of purpose, turning chaos into opportunity.</p>
+                <p><strong>Preview:</strong> We'll explore the chaos of poor crisis leadership, how to lead with clarity and purpose, and the resilient future this creates.</p>
+                <p><strong>Shared Value/s:</strong> We all admire leaders who stay calm under pressure, uniting us around a shared goal. We value resilience and clarity in the face of uncertainty, knowing it leads to stronger teams and brighter outcomes.</p>
+                <p><strong>Transition:</strong> Let's first identify the enemy of ineffective crisis leadership.</p>
+                <h2>Body</h2>
+                <h3>Need [Problem - Enemy]</h3>
+                <p>Poor crisis leadership amplifies chaos, leaving teams lost and demoralized.</p>
+                <ul>
+                    <li>Without clear communication, rumors spread, and trust erodes—crises worsen when teams lack direction.</li>
+                    <li>Unfocused priorities scatter resources, delaying recovery and deepening uncertainty.</li>
+                    <li>The enemy is reactive leadership, which panics and fails to inspire confidence.</li>
+                </ul>
+                <p><strong>Transition:</strong> The solution is a disciplined, purpose-driven approach to crisis leadership.</p>
+                <h3>Satisfaction [General Solution]</h3>
+                <p>Leaders must anchor their teams in clarity, focus, and purpose during crises.</p>
+                <ul>
+                    <li>Communicate transparently: Share what you know, what you don't, and what you're doing about it.</li>
+                    <li>Set clear priorities: Identify the top three actions that will stabilize and move the team forward.</li>
+                    <li>Reinforce purpose: Remind your team why their work matters, tying it to a larger mission.</li>
+                    <li>Lead by example, staying calm and decisive to inspire confidence.</li>
+                </ul>
+                <p><strong>Transition:</strong> Picture the world this approach creates.</p>
+                <h3>Visualization [Resulting Situation]</h3>
+                <p>Imagine your team navigating a crisis like a seasoned crew on a stormy sea—calm, coordinated, and confident. Every member knows their role, trusts your leadership, and feels anchored by a shared purpose. The crisis becomes a catalyst, forging a stronger, more unified team that emerges ready to conquer any challenge.</p>
+                <p><strong>Transition:</strong> This resilient future starts with practical steps you can take today.</p>
+                <h2>Conclusion</h2>
+                <p><strong>Summary:</strong> Reactive leadership fuels chaos in crises, but clear communication, focused priorities, and purpose create stability. By leading with intention, you turn challenges into opportunities.</p>
+                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
+                <ul>
+                    <li>In your next team meeting, share one clear priority for the week and explain how it ties to your mission.</li>
+                    <li>Practice a 1-minute "crisis script" to communicate calmly and clearly under pressure.</li>
+                    <li>Ask your team for one idea to strengthen resilience in the face of challenges.</li>
+                </ul>
+                <p><strong>Close:</strong> In the storm of a crisis, be the lighthouse—steady, clear, and guiding. Lead with purpose, and your team will follow you through any tempest to brighter shores.</p>
+            </div>
+        </section>
+
+        <section id="people-centered" class="section">
+            <div class="speech-hero" style="background-image: url('people-centered.webp');">
+                <div class="speech-hero-content">
+                    <h1>Embracing People-Centered Leadership</h1>
+                    <p>Leadership in 2025 thrives on vulnerability, transparency, and recognition, creating workplaces where people don't just work—they flourish.</p>
+                </div>
+            </div>
+            <div class="container speech-content">
+                <h2>Introduction</h2>
+                <p><strong>Attention:</strong> Imagine a workplace where every team member feels seen, valued, and inspired—not because of rigid rules or fear, but because their leader dares to be human, vulnerable, and real. That's the power of people-centered leadership, the defining style for 2025 and beyond.</p>
+                <p><strong>Thesis:</strong> Leadership in 2025 thrives on vulnerability, transparency, and recognition, creating workplaces where people don't just work—they flourish.</p>
+                <p><strong>Preview:</strong> Today, we'll uncover the problem of outdated, control-based leadership, explore how a people-centered approach transforms teams, and envision a workplace where everyone thrives.</p>
+                <p><strong>Shared Value/s:</strong> We all want to work in environments where we're respected as individuals, where our contributions matter, and where leaders connect with us on a human level. We value trust, collaboration, and a sense of belonging that fuels our best work.</p>
+                <p><strong>Transition:</strong> Let's first confront the enemy of outdated leadership.</p>
+                <h2>Body</h2>
+                <h3>Need [Problem - Enemy]</h3>
+                <p>Traditional command-and-control leadership stifles creativity and disengages teams.</p>
+                <ul>
+                    <li>Fear-based tactics, like micromanagement or rigid hierarchies, crush morale—studies show 65% of employees feel disconnected when leaders prioritize control over connection.</li>
+                    <li>Lack of recognition leaves workers feeling invisible, reducing productivity and loyalty.</li>
+                    <li>The enemy is dehumanized leadership, where people are treated as cogs, not contributors, leading to burnout and turnover.</li>
+                </ul>
+                <p><strong>Transition:</strong> The solution lies in putting people at the heart of leadership.</p>
+                <h3>Satisfaction [General Solution]</h3>
+                <p>Leaders must embrace a people-centered approach, prioritizing vulnerability, transparency, and recognition.</p>
+                <ul>
+                    <li>Be vulnerable: Share your challenges and uncertainties to build trust and relatability.</li>
+                    <li>Practice transparency: Communicate openly about goals, challenges, and decisions to foster inclusion.</li>
+                    <li>Celebrate recognition: Acknowledge individual and team contributions regularly, tying them to shared goals.</li>
+                    <li>Listen actively: Create space for your team's ideas and concerns, showing they're valued.</li>
+                </ul>
+                <p><strong>Transition:</strong> Picture the vibrant workplace this approach creates.</p>
+                <h3>Visualization [Resulting Situation]</h3>
+                <p>Envision a team that pulses with energy, where every member feels empowered to bring their whole self to work. Ideas spark like wildfire, fueled by trust and mutual respect. Challenges are met with collaboration, not fear, and every success is celebrated as a shared victory. Your leadership becomes a catalyst, transforming your workplace into a thriving community where people don't just show up—they shine.</p>
+                <p><strong>Transition:</strong> This inspiring future is within your grasp, starting with simple, intentional steps.</p>
+                <h2>Conclusion</h2>
+                <p><strong>Summary:</strong> Outdated, control-based leadership breeds disengagement, but a people-centered approach—rooted in vulnerability, transparency, and recognition—unlocks your team's potential. By prioritizing people, you create a culture of trust and innovation.</p>
+                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
+                <ul>
+                    <li>This week, share one personal challenge or lesson with your team to show vulnerability.</li>
+                    <li>In your next meeting, recognize one team member's contribution and explain its impact.</li>
+                    <li>Ask your team for one idea to improve the workplace, and commit to acting on it.</li>
+                </ul>
+                <p><strong>Close:</strong> Lead not from a throne, but from the heart. Be the leader who sees, hears, and uplifts—creating a workplace where every person feels like they belong, and together, you build a legacy of impact and inspiration.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+             <a href="#speeches">Featured Speeches</a>
+               <a href="index.html">Home</a>
+                <a href="authentic-leadership.html">Authentic Leadership</a>
+                <a href="engaging-humor.html">Engaging Humor</a>
+                <a href="about.html">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <p>© <script>document.write(new Date().getFullYear())</script> Leo Smith, DTM. All rights reserved.</p>
+    </footer>
+</body>
+</html>
