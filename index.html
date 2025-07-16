@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Leo Smith, DTM, delivers inspiring leadership speeches on purpose-driven leadership, emotional intelligence, and crisis management.">
-    <meta name="keywords" content="leadership, speeches, emotional intelligence, purpose-driven, crisis leadership, Leo Smith">
-    <title>Leo Smith, DTM - Leadership Speeches</title>
+    <meta name="description" content="Leo Smith, DTM - Transformational leadership speeches that inspire action. Purpose-driven, emotionally intelligent communication for modern leaders.">
+    <meta name="keywords" content="leadership speeches, toastmasters, public speaking, emotional intelligence, purpose-driven leadership">
+    <title>Leo Smith, DTM - Leadership Speaker</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* === TOASTMASTERS BRAND COLORS === */
         :root {
@@ -16,6 +19,7 @@
             --yellow: #F2DF74;
             --white: #FFFFFF;
             --black: #000000;
+            --transition: all 0.3s ease;
         }
 
         body {
@@ -25,10 +29,12 @@
             margin: 0;
             padding: 0;
             background: var(--white);
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
         }
 
         /* Navigation */
@@ -55,6 +61,15 @@
             font-weight: 700;
             color: var(--yellow);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
         }
 
         .nav-links {
@@ -65,72 +80,253 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: var(--transition);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow);
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
             color: var(--yellow);
         }
 
-        /* Hero Section */
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section - Modern Design */
         .hero {
-            background: linear-gradient(rgba(0, 65, 101, 0.8), rgba(0, 65, 101, 0.8)), 
-                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(0, 65, 101, 0.9) 0%, rgba(119, 36, 50, 0.9) 100%);
             color: white;
-            padding: 5rem 1rem;
-            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--yellow);
-            color: var(--black);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Main Content */
-        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
         }
 
-        .section {
-            margin-bottom: 4rem;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--yellow);
+            color: var(--yellow);
+        }
+
+        .btn-outline:hover {
+            background: var(--yellow);
+            color: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Animated floating elements */
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            border-radius: 50%;
+            background: var(--yellow);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+            }
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+
+        /* Video CTA Section */
+        .video-cta {
+            background: linear-gradient(rgba(0, 65, 101, 0.9), rgba(0, 65, 101, 0.9)), 
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+
+        .video-container:hover {
+            transform: scale(1.02);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            display: block;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-icon {
+            width: 30px;
+            height: 30px;
+            fill: var(--blue);
+            margin-left: 5px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 2rem;
+            background: #f9f9f9;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
             color: var(--blue);
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
             text-align: center;
             position: relative;
         }
@@ -144,11 +340,65 @@
             margin: 1rem auto;
         }
 
-        /* Speech Cards */
-        .speeches {
+        .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--yellow);
+            opacity: 0.2;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--maroon);
+        }
+
+        /* Speech Cards */
+        .speeches {
+            padding: 4rem 2rem;
+        }
+
+        .speeches-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .speech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .speech-card {
@@ -156,17 +406,43 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: var(--transition);
+            position: relative;
         }
 
         .speech-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .speech-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
         }
 
         .speech-image {
             height: 200px;
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+
+        .speech-image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
         }
 
         .speech-content {
@@ -175,81 +451,175 @@
 
         .speech-content h3 {
             color: var(--maroon);
-            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .speech-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: var(--blue);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            color: var(--yellow);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+        }
+
+        .newsletter-button {
+            background: var(--yellow);
+            color: var(--black);
+            border: none;
+            padding: 0 2rem;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-button:hover {
+            background: var(--white);
         }
 
         /* Footer */
         footer {
-            background: var(--blue);
+            background: var(--maroon);
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--yellow);
             margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .footer-links h3 {
+            color: var(--yellow);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
         }
 
         .footer-links a {
             color: white;
             text-decoration: none;
+            transition: var(--transition);
         }
 
         .footer-links a:hover {
             color: var(--yellow);
+            padding-left: 5px;
         }
 
-        /* Individual Speech Pages */
-        .speech-hero {
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 4rem 1rem;
-            text-align: center;
-            position: relative;
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .speech-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(119, 36, 50, 0.8);
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .speech-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
         }
 
-        .speech-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .delay-1 {
+            animation-delay: 0.2s;
         }
 
-        .speech-content {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        .delay-2 {
+            animation-delay: 0.4s;
         }
 
-        .speech-content h2 {
-            color: var(--blue);
-        }
-
-        .speech-content h3 {
-            color: var(--maroon);
-        }
-
-        .speech-content ul {
-            margin-left: 1.5rem;
+        .delay-3 {
+            animation-delay: 0.6s;
         }
 
         /* Responsive */
@@ -266,367 +636,313 @@
             .nav-links {
                 flex-direction: column;
                 gap: 0.5rem;
+                align-items: center;
             }
-        }
 
-        /* Hero Button Enhancements */
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.8rem;
-        }
-
-        .btn-primary {
-            background: var(--yellow);
-            color: var(--black);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--yellow);
-            color: var(--yellow);
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover {
-            background: var(--yellow);
-            color: var(--blue);
-            transform: translateY(-3px);
-        }
-
-        .icon {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        /* Animated scroll prompt */
-        .scroll-prompt {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            opacity: 0.8;
-            animation: bounce 2s infinite;
-        }
-
-        .chevron {
-            width: 24px;
-            height: 24px;
-            fill: white;
-            margin-top: 5px;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
-            40% {transform: translateY(-10px) translateX(-50%);}
-            60% {transform: translateY(-5px) translateX(-50%);}
-        }
-
-        @media (max-width: 480px) {
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            .btn, .btn-outline {
+
+            .btn {
                 width: 100%;
-                text-align: center;
+                justify-content: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-button {
+                border-radius: 50px;
+                padding: 1rem;
             }
         }
 
-        .about-image .hero-buttons {
-            background: rgba(255,255,255,0.9);
-            padding: 1rem;
-            border-radius: 8px;
-            backdrop-filter: blur(2px);
+        /* Floating animation for hero elements */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">Leo Smith, DTM</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="authentic-leadership.html">Authentic Leadership</a>
-                <a href="dynamic-leadership.html">Dynamic Leadership</a>
-                <a href="engaging-humor.html">Engaging Humor</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24">
+                        <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm-1 13v-4h2v4h-2zm0-6V6h2v3h-2z"/>
+                    </svg>
+                    Leo Smith, DTM
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="leadership-speeches.html">Leadership Speeches</a>
+                    <a href="authentic-leadership.html">Authentic Leadership</a>
+                    <a href="dynamic-leadership.html">Dynamic Leadership</a>
+                    <a href="engaging-humor.html">Engaging Humor</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     </header>
+
     <main>
-        <section id="home" class="hero">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="floating-shapes">
+                <!-- Animated background shapes -->
+                <div class="shape" style="width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s;"></div>
+                <div class="shape" style="width: 150px; height: 150px; top: 70%; left: 80%; animation-delay: 2s;"></div>
+                <div class="shape" style="width: 60px; height: 60px; top: 40%; left: 60%; animation-delay: 4s;"></div>
+                <div class="shape" style="width: 80px; height: 80px; top: 80%; left: 30%; animation-delay: 6s;"></div>
+            </div>
             <div class="hero-content">
-                <h1>Leadership Speeches</h1>
-                <p>Inspiring action through powerful communication and purpose-driven leadership</p>
+                <h1 class="floating">Leadership That <span style="color: var(--yellow);">Inspires</span> Action</h1>
+                <p class="animate delay-1">Transform your communication and leadership skills with powerful, purpose-driven speeches that resonate across generations.</p>
                 <div class="hero-buttons">
-                    <a href="#speeches" class="btn btn-outline">Explore Speeches</a>
-                    <a href="about.html" class="btn btn-outline">Meet Leo</a>
-                    <a href="#discover" class="btn btn-outline">Discover More</a>
+                    <a href="#featured" class="btn btn-primary animate delay-2">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+                        </svg>
+                        Featured Speeches
+                    </a>
+                    <a href="about.html" class="btn btn-outline animate delay-2">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        Meet Leo
+                    </a>
                 </div>
-            </div>
-            <div class="scroll-prompt" role="button" aria-label="Scroll down">
-                <span>Scroll</span>
-                <svg class="chevron" viewBox="0 0 24 24">
-                    <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
-                </svg>
             </div>
         </section>
 
-         <div class="container" id="speeches">
-        <section class="section">
-            <h2 class="section-title">Featured Speeches</h2>
-            <div class="speeches">
-                <div class="speech-card">
-                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
-                    <div class="speech-content">
-                        <h3>Inspiring Action Through Purpose-Driven Leadership</h3>
-                        <p>Discover how to ignite passion and loyalty by leading with purpose rather than just tasks.</p>
-                        <a href="#inspiring-action" class="btn">Read Speech</a>
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item animate">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item animate delay-1">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Speeches Delivered</div>
+                </div>
+                <div class="stat-item animate delay-2">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">People Inspired</div>
+                </div>
+                <div class="stat-item animate delay-3">
+                    <div class="stat-number">DTM</div>
+                    <div class="stat-label">Distinguished Toastmaster</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video CTA Section -->
+        <section class="video-cta">
+            <h2 class="animate">Experience the Power of Leadership Communication</h2>
+            <p class="animate delay-1">Watch my recent keynote on purpose-driven leadership that resonates across generations.</p>
+            <div class="video-container animate delay-2">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Leadership keynote preview" class="video-thumbnail">
+                <div class="play-button">
+                    <svg class="play-icon" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Speeches -->
+        <section id="featured" class="speeches">
+            <div class="speeches-container">
+                <h2 class="section-title">Featured Leadership Speeches</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;" class="animate">Explore my most requested leadership speeches that bridge generations and inspire action.</p>
+                
+                <div class="speech-grid">
+                    <div class="speech-card animate">
+                        <div class="speech-tag">Most Popular</div>
+                        <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="speech-content">
+                            <h3>Inspiring Action Through Purpose-Driven Leadership</h3>
+                            <p>Discover how to ignite passion and loyalty by leading with purpose rather than just tasks.</p>
+                            <a href="purpose-driven-leadership.html" class="btn btn-primary" style="display: inline-block; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Speech</a>
+                        </div>
+                    </div>
+                    
+                    <div class="speech-card animate delay-1">
+                        <div class="speech-tag">For Millennials</div>
+                        <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                        <div class="speech-content">
+                            <h3>Leading with Emotional Intelligence</h3>
+                            <p>Learn how empathy and self-awareness can transform your leadership and build unstoppable teams.</p>
+                            <a href="emotional-intelligence.html" class="btn btn-primary" style="display: inline-block; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Speech</a>
+                        </div>
+                    </div>
+                    
+                    <div class="speech-card animate delay-2">
+                        <div class="speech-tag">For Boomers</div>
+                        <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                        <div class="speech-content">
+                            <h3>Leading Through Crisis with Purpose</h3>
+                            <p>Master the art of crisis leadership with clear communication and focused priorities.</p>
+                            <a href="crisis-leadership.html" class="btn btn-primary" style="display: inline-block; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Speech</a>
+                        </div>
                     </div>
                 </div>
-                <div class="speech-card">
-                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
-                    <div class="speech-content">
-                        <h3>Leading with Emotional Intelligence</h3>
-                        <p>Learn how empathy and self-awareness can transform your leadership and build unstoppable teams.</p>
-                        <a href="#emotional-intelligence" class="btn">Read Speech</a>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="testimonials-container">
+                <h2 class="section-title">What People Are Saying</h2>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate">
+                        <p class="testimonial-text">"Leo's speech on purpose-driven leadership transformed how our executive team communicates. We've seen engagement scores rise 40% in just six months."</p>
+                        <p class="testimonial-author">— Sarah Johnson, CEO TechForward</p>
+                    </div>
+                    
+                    <div class="testimonial-card animate delay-1">
+                        <p class="testimonial-text">"As a millennial manager, Leo's emotional intelligence framework helped me bridge the gap with my Gen X and Boomer team members. Practical and powerful!"</p>
+                        <p class="testimonial-author">— Michael Chen, Product Manager</p>
+                    </div>
+                    
+                    <div class="testimonial-card animate delay-2">
+                        <p class="testimonial-text">"After 30 years in leadership, I thought I'd heard it all. Leo's fresh perspective on people-centered leadership reignited my passion for developing teams."</p>
+                        <p class="testimonial-author">— Robert Williams, Retired COO</p>
                     </div>
                 </div>
-                <div class="speech-card">
-                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
-                    <div class="speech-content">
-                        <h3>Leading Through Crisis with Purpose</h3>
-                        <p>Master the art of crisis leadership with clear communication and focused priorities.</p>
-                        <a href="#crisis-leadership" class="btn">Read Speech</a>
-                    </div>
-                </div>
-                <div class="speech-card">
-                    <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
-                    <div class="speech-content">
-                        <h3>Embracing People-Centered Leadership</h3>
-                        <p>Create workplaces where people flourish through vulnerability, transparency, and recognition.</p>
-                        <a href="#people-centered" class="btn">Read Speech</a>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <section id="purpose-driven" class="section">
-            <div class="speech-hero" style="background-image: url('purpose-driven.webp');">
-                <div class="speech-hero-content">
-                    <h1>Inspiring Action Through Purpose-Driven Leadership</h1>
-                    <p>True leadership begins with a clear sense of why—a purpose that resonates deeply, unites teams, and drives meaningful action.</p>
-                </div>
-            </div>
-            <div class="container speech-content">
-                <h2>Introduction</h2>
-                <p><strong>Attention:</strong> Imagine a world where every leader you admire doesn't just tell you what they do, but why they do it—a spark that ignites passion and loyalty in everyone around them. Simon Sinek's Golden Circle shows us how this simple shift in focus can transform the way we lead and inspire.</p>
-                <p><strong>Thesis:</strong> True leadership begins with a clear sense of why—a purpose that resonates deeply, unites teams, and drives meaningful action.</p>
-                <p><strong>Preview:</strong> Today, we'll explore the problem of leadership that lacks purpose, how embracing a "why"-driven approach can transform your impact, and the vibrant future that awaits when you lead with inspiration.</p>
-                <p><strong>Shared Value/s:</strong> We all want to be part of something bigger than ourselves—whether it's a team, a company, or a cause. We value leaders who inspire us not just to work, but to believe in a shared vision that fuels our passion and purpose.</p>
-                <p><strong>Transition:</strong> Let's start by examining why so many leaders struggle to connect and inspire.</p>
-                <h2>Body</h2>
-                <h3>Need [Problem - Enemy]</h3>
-                <p>Too many leaders focus on what they do or how they do it, leaving their teams uninspired and disconnected.</p>
-                <ul>
-                    <li>Without a clear "why," employees feel like cogs in a machine, leading to disengagement and turnover. Studies show 70% of workers feel unmotivated due to a lack of purpose.</li>
-                    <li>This approach creates transactional cultures where loyalty wanes, and innovation stalls.</li>
-                    <li>The enemy here is superficial leadership—relying on tasks and metrics without a compelling vision to unite people.</li>
-                </ul>
-                <p><strong>Transition:</strong> So, how do we defeat this enemy of disconnection? By leading with purpose.</p>
-                <h3>Satisfaction [General Solution]</h3>
-                <p>Leaders must start with why—articulating a clear, emotional purpose that resonates with their team.</p>
-                <ul>
-                    <li>Define your organization's core belief. For example, Apple's "why" is to challenge the status quo, not just to make computers.</li>
-                    <li>Communicate this purpose consistently, using stories and examples that connect emotionally.</li>
-                    <li>Empower your team to align their work with this vision, fostering ownership and creativity.</li>
-                    <li>Leaders themselves must embody this "why" through actions, building trust and authenticity.</li>
-                </ul>
-                <p><strong>Transition:</strong> Imagine what happens when this purpose-driven approach takes root.</p>
-                <h3>Visualization [Resulting Situation]</h3>
-                <p>Picture a workplace buzzing with energy, where every team member wakes up eager to contribute to a shared mission. Teams collaborate seamlessly, not because they're told to, but because they believe in the cause. Ideas flow freely, and challenges become opportunities to innovate. Your leadership becomes a beacon, drawing talent and loyalty like moths to a flame, creating a legacy of impact that echoes beyond the office walls.</p>
-                <p><strong>Transition:</strong> This vibrant future is within reach, and it starts with a few simple steps.</p>
-                <h2>Conclusion</h2>
-                <p><strong>Summary:</strong> We've seen how a lack of purpose stifles leadership and disengages teams. By embracing a "why"-driven approach, you can inspire action and build a culture of passion and innovation.</p>
-                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
-                <ul>
-                    <li>Take 10 minutes this week to write down your personal or organizational "why." What belief drives you?</li>
-                    <li>Share this purpose with your team in your next meeting, using a story that makes it real.</li>
-                    <li>Ask one colleague how they connect their work to this vision, and listen to their perspective.</li>
-                </ul>
-                <p><strong>Close:</strong> Let's lead not just with tasks, but with a purpose that lights the way. Be the leader who doesn't just manage, but inspires a movement—one heart, one team, one "why" at a time.</p>
-            </div>
-        </section>
-
-        <section id="emotional-intelligence" class="section">
-            <div class="speech-hero" style="background-image: url('emotional-intelligence.webp');">
-                <div class="speech-hero-content">
-                    <h1>Leading with Emotional Intelligence</h1>
-                    <p>Leadership thrives not on authority, but on emotional intelligence—empathy, self-awareness, and connection that build unstoppable teams.</p>
-                </div>
-            </div>
-            <div class="container speech-content">
-                <h2>Introduction</h2>
-                <p><strong>Attention:</strong> Picture a leader who walks into a tense meeting, senses the unspoken fears, and with a few empathetic words, transforms conflict into collaboration. That's the power of emotional intelligence, as Daniel Goleman teaches us.</p>
-                <p><strong>Thesis:</strong> Leadership thrives not on authority, but on emotional intelligence—empathy, self-awareness, and connection that build unstoppable teams.</p>
-                <p><strong>Preview:</strong> We'll uncover the problem of emotionally disconnected leadership, how emotional intelligence can bridge that gap, and the thriving workplace it creates.</p>
-                <p><strong>Shared Value/s:</strong> We all crave leaders who see us, hear us, and understand us. We value workplaces where trust and collaboration flourish, making every challenge feel surmountable.</p>
-                <p><strong>Transition:</strong> Let's first confront the enemy of disconnected leadership.</p>
-                <h2>Body</h2>
-                <h3>Need [Problem - Enemy]</h3>
-                <p>Leadership that ignores emotions creates fractured teams and missed opportunities.</p>
-                <ul>
-                    <li>Without empathy, conflicts escalate, and morale plummets—studies show 50% of employees leave due to poor emotional connections with leaders.</li>
-                    <li>Leaders who lack self-awareness react impulsively, eroding trust and stifling innovation.</li>
-                    <li>The enemy is emotional blindness, leaving teams feeling undervalued and unheard.</li>
-                </ul>
-                <p><strong>Transition:</strong> The solution lies in cultivating emotional intelligence.</p>
-                <h3>Satisfaction [General Solution]</h3>
-                <p>Leaders must harness emotional intelligence to connect, inspire, and lead effectively.</p>
-                <ul>
-                    <li>Practice self-awareness: Reflect daily on your emotions and triggers to stay grounded.</li>
-                    <li>Show empathy: Listen actively to your team's concerns, validating their feelings before solving problems.</li>
-                    <li>Build relationships: Foster trust through transparent communication and genuine recognition.</li>
-                    <li>Model emotional resilience, showing your team how to navigate challenges with calm and clarity.</li>
-                </ul>
-                <p><strong>Transition:</strong> Imagine the world this creates for you and your team.</p>
-                <h3>Visualization [Resulting Situation]</h3>
-                <p>Envision a workplace where every voice is heard, where conflicts spark growth rather than division. Your team moves as one, bound by trust and mutual respect, tackling challenges with confidence. Your leadership radiates warmth, drawing people together like a hearth on a winter's night, creating a culture where everyone thrives.</p>
-                <p><strong>Transition:</strong> This future is possible, and it starts with small, intentional actions.</p>
-                <h2>Conclusion</h2>
-                <p><strong>Summary:</strong> Emotionally disconnected leadership breeds disengagement, but emotional intelligence fosters trust and collaboration. By prioritizing empathy and self-awareness, you can transform your team.</p>
-                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
-                <ul>
-                    <li>Tonight, journal about a recent leadership moment—how did your emotions influence your actions?</li>
-                    <li>In your next team interaction, ask a colleague how they're feeling and listen without interrupting.</li>
-                    <li>Recognize one team member's contribution publicly this week to build connection.</li>
-                </ul>
-                <p><strong>Close:</strong> Lead with your heart as much as your head. Be the leader who doesn't just command, but connects—creating a team that's not just strong, but unstoppable.</p>
-            </div>
-        </section>
-
-        <section id="crisis-leadership" class="section">
-            <div class="speech-hero" style="background-image: url('crisis-leadership.webp');">
-                <div class="speech-hero-content">
-                    <h1>Leading Through Crisis with Purpose</h1>
-                    <p>Effective crisis leadership hinges on clear communication, focused priorities, and an unwavering sense of purpose, turning chaos into opportunity.</p>
-                </div>
-            </div>
-            <div class="container speech-content">
-                <h2>Introduction</h2>
-                <p><strong>Attention:</strong> In the chaos of a crisis, great leaders don't just survive—they shine, guiding their teams with clarity and purpose, as outlined in Crisis Leadership in 2025. Picture yourself as that beacon in the storm.</p>
-                <p><strong>Thesis:</strong> Effective crisis leadership hinges on clear communication, focused priorities, and an unwavering sense of purpose, turning chaos into opportunity.</p>
-                <p><strong>Preview:</strong> We'll explore the chaos of poor crisis leadership, how to lead with clarity and purpose, and the resilient future this creates.</p>
-                <p><strong>Shared Value/s:</strong> We all admire leaders who stay calm under pressure, uniting us around a shared goal. We value resilience and clarity in the face of uncertainty, knowing it leads to stronger teams and brighter outcomes.</p>
-                <p><strong>Transition:</strong> Let's first identify the enemy of ineffective crisis leadership.</p>
-                <h2>Body</h2>
-                <h3>Need [Problem - Enemy]</h3>
-                <p>Poor crisis leadership amplifies chaos, leaving teams lost and demoralized.</p>
-                <ul>
-                    <li>Without clear communication, rumors spread, and trust erodes—crises worsen when teams lack direction.</li>
-                    <li>Unfocused priorities scatter resources, delaying recovery and deepening uncertainty.</li>
-                    <li>The enemy is reactive leadership, which panics and fails to inspire confidence.</li>
-                </ul>
-                <p><strong>Transition:</strong> The solution is a disciplined, purpose-driven approach to crisis leadership.</p>
-                <h3>Satisfaction [General Solution]</h3>
-                <p>Leaders must anchor their teams in clarity, focus, and purpose during crises.</p>
-                <ul>
-                    <li>Communicate transparently: Share what you know, what you don't, and what you're doing about it.</li>
-                    <li>Set clear priorities: Identify the top three actions that will stabilize and move the team forward.</li>
-                    <li>Reinforce purpose: Remind your team why their work matters, tying it to a larger mission.</li>
-                    <li>Lead by example, staying calm and decisive to inspire confidence.</li>
-                </ul>
-                <p><strong>Transition:</strong> Picture the world this approach creates.</p>
-                <h3>Visualization [Resulting Situation]</h3>
-                <p>Imagine your team navigating a crisis like a seasoned crew on a stormy sea—calm, coordinated, and confident. Every member knows their role, trusts your leadership, and feels anchored by a shared purpose. The crisis becomes a catalyst, forging a stronger, more unified team that emerges ready to conquer any challenge.</p>
-                <p><strong>Transition:</strong> This resilient future starts with practical steps you can take today.</p>
-                <h2>Conclusion</h2>
-                <p><strong>Summary:</strong> Reactive leadership fuels chaos in crises, but clear communication, focused priorities, and purpose create stability. By leading with intention, you turn challenges into opportunities.</p>
-                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
-                <ul>
-                    <li>In your next team meeting, share one clear priority for the week and explain how it ties to your mission.</li>
-                    <li>Practice a 1-minute "crisis script" to communicate calmly and clearly under pressure.</li>
-                    <li>Ask your team for one idea to strengthen resilience in the face of challenges.</li>
-                </ul>
-                <p><strong>Close:</strong> In the storm of a crisis, be the lighthouse—steady, clear, and guiding. Lead with purpose, and your team will follow you through any tempest to brighter shores.</p>
-            </div>
-        </section>
-
-        <section id="people-centered" class="section">
-            <div class="speech-hero" style="background-image: url('people-centered.webp');">
-                <div class="speech-hero-content">
-                    <h1>Embracing People-Centered Leadership</h1>
-                    <p>Leadership in 2025 thrives on vulnerability, transparency, and recognition, creating workplaces where people don't just work—they flourish.</p>
-                </div>
-            </div>
-            <div class="container speech-content">
-                <h2>Introduction</h2>
-                <p><strong>Attention:</strong> Imagine a workplace where every team member feels seen, valued, and inspired—not because of rigid rules or fear, but because their leader dares to be human, vulnerable, and real. That's the power of people-centered leadership, the defining style for 2025 and beyond.</p>
-                <p><strong>Thesis:</strong> Leadership in 2025 thrives on vulnerability, transparency, and recognition, creating workplaces where people don't just work—they flourish.</p>
-                <p><strong>Preview:</strong> Today, we'll uncover the problem of outdated, control-based leadership, explore how a people-centered approach transforms teams, and envision a workplace where everyone thrives.</p>
-                <p><strong>Shared Value/s:</strong> We all want to work in environments where we're respected as individuals, where our contributions matter, and where leaders connect with us on a human level. We value trust, collaboration, and a sense of belonging that fuels our best work.</p>
-                <p><strong>Transition:</strong> Let's first confront the enemy of outdated leadership.</p>
-                <h2>Body</h2>
-                <h3>Need [Problem - Enemy]</h3>
-                <p>Traditional command-and-control leadership stifles creativity and disengages teams.</p>
-                <ul>
-                    <li>Fear-based tactics, like micromanagement or rigid hierarchies, crush morale—studies show 65% of employees feel disconnected when leaders prioritize control over connection.</li>
-                    <li>Lack of recognition leaves workers feeling invisible, reducing productivity and loyalty.</li>
-                    <li>The enemy is dehumanized leadership, where people are treated as cogs, not contributors, leading to burnout and turnover.</li>
-                </ul>
-                <p><strong>Transition:</strong> The solution lies in putting people at the heart of leadership.</p>
-                <h3>Satisfaction [General Solution]</h3>
-                <p>Leaders must embrace a people-centered approach, prioritizing vulnerability, transparency, and recognition.</p>
-                <ul>
-                    <li>Be vulnerable: Share your challenges and uncertainties to build trust and relatability.</li>
-                    <li>Practice transparency: Communicate openly about goals, challenges, and decisions to foster inclusion.</li>
-                    <li>Celebrate recognition: Acknowledge individual and team contributions regularly, tying them to shared goals.</li>
-                    <li>Listen actively: Create space for your team's ideas and concerns, showing they're valued.</li>
-                </ul>
-                <p><strong>Transition:</strong> Picture the vibrant workplace this approach creates.</p>
-                <h3>Visualization [Resulting Situation]</h3>
-                <p>Envision a team that pulses with energy, where every member feels empowered to bring their whole self to work. Ideas spark like wildfire, fueled by trust and mutual respect. Challenges are met with collaboration, not fear, and every success is celebrated as a shared victory. Your leadership becomes a catalyst, transforming your workplace into a thriving community where people don't just show up—they shine.</p>
-                <p><strong>Transition:</strong> This inspiring future is within your grasp, starting with simple, intentional steps.</p>
-                <h2>Conclusion</h2>
-                <p><strong>Summary:</strong> Outdated, control-based leadership breeds disengagement, but a people-centered approach—rooted in vulnerability, transparency, and recognition—unlocks your team's potential. By prioritizing people, you create a culture of trust and innovation.</p>
-                <p><strong>Call to ACTION [specific, individual, solution]:</strong></p>
-                <ul>
-                    <li>This week, share one personal challenge or lesson with your team to show vulnerability.</li>
-                    <li>In your next meeting, recognize one team member's contribution and explain its impact.</li>
-                    <li>Ask your team for one idea to improve the workplace, and commit to acting on it.</li>
-                </ul>
-                <p><strong>Close:</strong> Lead not from a throne, but from the heart. Be the leader who sees, hears, and uplifts—creating a workplace where every person feels like they belong, and together, you build a legacy of impact and inspiration.</p>
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="newsletter-container">
+                <h2 class="animate">Get Leadership Insights</h2>
+                <p class="animate delay-1">Join my newsletter for monthly leadership tips, speech excerpts, and event announcements.</p>
+                <form class="newsletter-form animate delay-2">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
             </div>
         </section>
     </main>
+
     <footer>
-        <div class="footer-links">
-             <a href="#speeches">Featured Speeches</a>
-               <a href="index.html">Home</a>
-                <a href="authentic-leadership.html">Authentic Leadership</a>
-                <a href="engaging-humor.html">Engaging Humor</a>
-                <a href="about.html">About</a>
-                <a href="#contact">Contact</a>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">Leo Smith, DTM</a>
+                <p>Inspiring action through powerful communication and purpose-driven leadership.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Speeches</h3>
+                <ul>
+                    <li><a href="purpose-driven-leadership.html">Purpose-Driven Leadership</a></li>
+                    <li><a href="emotional-intelligence.html">Emotional Intelligence</a></li>
+                    <li><a href="crisis-leadership.html">Crisis Leadership</a></li>
+                    <li><a href="people-centered.html">People-Centered Leadership</a></li>
+                    <li><a href="leadership-speeches.html">View All</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Leo</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
             </div>
         </div>
-        <p>© <script>document.write(new Date().getFullYear())</script> Leo Smith, DTM. All rights reserved.</p>
+        
+        <div class="footer-bottom">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Leo Smith, DTM. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+            
+            // Video play button functionality
+            const playButton = document.querySelector('.play-button');
+            if (playButton) {
+                playButton.addEventListener('click', function() {
+                    alert('Video playback would start here in a real implementation.');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
