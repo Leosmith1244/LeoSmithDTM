@@ -1,4 +1,2 @@
-[[plugins]]
-package = "netlify-plugin-include-files"
-  [plugins.inputs]
-  sources = ["partials/*"]
+[functions]
+  included_files = ["partials/*"]
