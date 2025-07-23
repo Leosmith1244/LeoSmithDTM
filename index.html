@@ -3,1098 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Leo Smith, DTM - Transformational leadership speeches that inspire action. Purpose-driven, emotionally intelligent communication for modern leaders.">
-    <meta name="keywords" content="leadership speeches, toastmasters, public speaking, emotional intelligence, purpose-driven leadership">
-    <title>Leo Smith, DTM - Leadership Speaker</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>TLI Resources Hub | District 106 Toastmasters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* === TOASTMASTERS BRAND COLORS === */
         :root {
             --maroon: #772432;
             --blue: #004165;
-            --gray: #A9B2B1;
             --yellow: #F2DF74;
-            --white: #FFFFFF;
-            --black: #000000;
-            --transition: all 0.3s ease;
         }
-
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--black);
-            margin: 0;
-            padding: 0;
-            background: var(--white);
-            overflow-x: hidden;
+            background-color: #f9f9f9;
         }
-        
-        h1, h2, h3, h4 {
+        h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
-            margin-top: 0;
         }
-
-        /* Navigation */
-        nav {
-            background: var(--blue);
-            color: white;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--yellow);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-icon {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            font-weight: 600;
-            position: relative;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--yellow);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--yellow);
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        /* Hero Section - Modern Design */
         .hero {
-            background: linear-gradient(135deg, rgba(0, 65, 101, 0.9) 0%, rgba(119, 36, 50, 0.9) 100%);
-            color: white;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--maroon) 100%);
         }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-            text-align: center;
+        .resource-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--yellow);
         }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            font-size: 1.1rem;
-        }
-
         .btn-primary {
-            background: var(--yellow);
-            color: var(--black);
+            background-color: var(--maroon);
+            transition: all 0.3s ease;
         }
-
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background-color: #5a1c26;
+            transform: translateY(-2px);
         }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--yellow);
-            color: var(--yellow);
-        }
-
-        .btn-outline:hover {
-            background: var(--yellow);
-            color: var(--blue);
-            transform: translateY(-3px);
-        }
-
-        .icon {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        /* Animated floating elements */
-        .floating-shapes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .shape {
-            position: absolute;
-            opacity: 0.1;
-            border-radius: 50%;
-            background: var(--yellow);
-            animation: float 15s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-1000px) rotate(720deg);
-            }
-        }
-
-        /* Stats Section */
-        .stats {
-            background: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-item {
-            padding: 2rem;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            color: var(--maroon);
-            font-weight: 600;
-        }
-
-        /* Video CTA Section */
-        .video-cta {
-            background: linear-gradient(rgba(0, 65, 101, 0.9), rgba(0, 65, 101, 0.9)), 
-                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .video-container {
-            max-width: 800px;
-            margin: 3rem auto 0;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            transition: var(--transition);
-        }
-
-        .video-container:hover {
-            transform: scale(1.02);
-        }
-
-        .video-thumbnail {
-            width: 100%;
-            display: block;
-        }
-
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: var(--yellow);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .play-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .play-icon {
-            width: 30px;
-            height: 30px;
-            fill: var(--blue);
-            margin-left: 5px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 4rem 2rem;
-            background: #f9f9f9;
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            color: var(--blue);
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: var(--yellow);
-            margin: 1rem auto;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            color: var(--yellow);
-            opacity: 0.2;
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--maroon);
-        }
-
-        /* Speech Cards */
-        .speeches {
-            padding: 4rem 2rem;
-        }
-
-        .speeches-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .speech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .speech-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .speech-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .speech-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--yellow);
-            color: var(--black);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 1;
-        }
-
-        .speech-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .speech-image:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
-        }
-
-        .speech-content {
-            padding: 1.5rem;
-        }
-
-        .speech-content h3 {
-            color: var(--maroon);
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .speech-content p {
-            margin-bottom: 1.5rem;
-            color: #555;
-        }
-
-        /* Newsletter */
-        .newsletter {
-            background: var(--blue);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .newsletter-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter h2 {
-            color: var(--yellow);
-            margin-bottom: 1rem;
-        }
-
-        .newsletter p {
-            margin-bottom: 2rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 50px 0 0 50px;
-            font-size: 1rem;
-        }
-
-        .newsletter-button {
-            background: var(--yellow);
-            color: var(--black);
-            border: none;
-            padding: 0 2rem;
-            border-radius: 0 50px 50px 0;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-button:hover {
-            background: var(--white);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--maroon);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: left;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--yellow);
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .footer-about p {
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background: var(--yellow);
-            color: var(--black);
-        }
-
-        .footer-links h3 {
-            color: var(--yellow);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--yellow);
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.6s;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: center;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-input {
-                border-radius: 50px;
-                margin-bottom: 1rem;
-            }
-
-            .newsletter-button {
-                border-radius: 50px;
-                padding: 1rem;
-            }
-        }
-
-        /* Floating animation for hero elements */
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-		/* Dropdown Navigation Styles */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    background-color: transparent;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-family: 'Open Sans', sans-serif;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.dropbtn:after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--yellow);
-    transition: var(--transition);
-}
-
-.dropdown:hover .dropbtn:after {
-    width: 100%;
-}
-
-.dropdown:hover .dropbtn {
-    color: var(--yellow);
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 0 0 8px 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    color: var(--blue);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: var(--transition);
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(242, 223, 116, 0.2);
-    color: var(--maroon);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Font Awesome for dropdown caret */
-.fa-caret-down {
-    margin-left: 5px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .dropdown {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .dropbtn {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .dropdown-content {
-        position: relative;
-        width: 100%;
-        box-shadow: none;
-    }
-}
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <a href="index.html" class="logo">
-                   
-                    Leo Smith, DTM
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-bold text-yellow-300 text-xl flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm-1 13v-4h2v4h-2zm0-6V6h2v3h-2z"/>
+                </svg>
+                District 106 TLI
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="#resources" class="hover:text-yellow-300">Resources</a>
+                <a href="mailto:pr@d106tm.org" class="hover:text-yellow-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-white py-20 px-4 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">TLI Resource Hub</h1>
+            <p class="text-xl md:text-2xl mb-8">Powerful tools to transform your Toastmasters club</p>
+            <div class="bg-yellow-400 text-maroon inline-block px-6 py-2 rounded-full font-bold text-lg">
+                Curated by Leo Smith, DTM - District PR Manager
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section id="resources" class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center text-maroon mb-12">Featured Resources</h2>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Turbocharge Card -->
+                <div class="resource-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-maroon text-white text-2xl font-bold w-12 h-12 flex items-center justify-center rounded-full mr-4">1</div>
+                        <h3 class="text-2xl font-bold text-blue-800">Turbocharge Your Club</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">10 Game-Changing Plays to Dominate Club Growth with high-energy strategies that convert visitors into members.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Blockbuster Guest Day Extravaganza</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>TikTok Speech Showdown</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-yellow-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Corporate Club Takeover</span>
+                        </li>
+                    </ul>
+                    <a href="turbocharge.html" class="btn-primary text-white px-6 py-3 rounded-lg font-bold inline-block w-full text-center">
+                        Explore Turbocharge Plays
+                    </a>
+                </div>
+
+                <!-- Creative Promotion Card -->
+                <div class="resource-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-maroon text-white text-2xl font-bold w-12 h-12 flex items-center justify-center rounded-full mr-4">2</div>
+                        <h3 class="text-2xl font-bold text-blue-800">Creative Promotion</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Innovative workshop ideas and event formats that showcase Toastmasters' value beyond traditional open houses.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">Workshops</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>Unleash Your Inner Orator</li>
+                                <li>Master Persuasion</li>
+                                <li>Conquer Stage Fright</li>
+                            </ul>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg">
+                            <h4 class="font-semibold text-maroon mb-2">Events</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>Murder Mystery Night</li>
+                                <li>Speakers Showcase</li>
+                                <li>Improv Night</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="creative-promotion.html" class="btn-primary text-white px-6 py-3 rounded-lg font-bold inline-block w-full text-center">
+                        Discover Promotion Ideas
+                    </a>
+                </div>
+
+                <!-- Launch Legends Card -->
+                <div class="resource-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-maroon text-white text-2xl font-bold w-12 h-12 flex items-center justify-center rounded-full mr-4">3</div>
+                        <h3 class="text-2xl font-bold text-blue-800">Launch Legends</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">10 Blockbuster Ideas to make your club the talk of the district with unforgettable experiences.</p>
+                    <div class="flex mb-8">
+                        <div class="bg-maroon text-white text-lg font-bold px-4 py-2 rounded-lg mr-4">
+                            #1
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-800">Epic Speech Marathon</h4>
+                            <p class="text-sm">2-hour showcase of member speeches to demonstrate growth</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-8">
+                        <div class="bg-maroon text-white text-lg font-bold px-4 py-2 rounded-lg mr-4">
+                            #2
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-800">Viral Video Challenge</h4>
+                            <p class="text-sm">1-minute speech clips shared on social media</p>
+                        </div>
+                    </div>
+                    <a href="launch-legends.html" class="btn-primary text-white px-6 py-3 rounded-lg font-bold inline-block w-full text-center">
+                        See Legendary Ideas
+                    </a>
+                </div>
+
+                <!-- Supercharge Card -->
+                <div class="resource-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-maroon text-white text-2xl font-bold w-12 h-12 flex items-center justify-center rounded-full mr-4">4</div>
+                        <h3 class="text-2xl font-bold text-blue-800">Supercharge Your Club</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">10 Epic Strategies for sustainable growth and measurable impact in your community.</p>
+                    <div class="space-y-4 mb-8">
+                        <div>
+                            <h4 class="font-bold text-blue-800 flex items-center">
+                                <svg class="w-5 h-5 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg>
+                                Signature Events
+                            </h4>
+                            <p class="text-sm ml-7">Create flagship experiences that become community traditions</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-800 flex items-center">
+                                <svg class="w-5 h-5 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg>
+                                Social Media Blitz
+                            </h4>
+                            <p class="text-sm ml-7">Build online presence with engaging content</p>
+                        </div>
+                    </div>
+                    <a href="supercharge.html" class="btn-primary text-white px-6 py-3 rounded-lg font-bold inline-block w-full text-center">
+                        Explore Strategies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 bg-blue-900 text-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Club?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Download all resources in one complete package</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="btn-primary text-white px-8 py-3 rounded-lg font-bold">
+                    Download Full Toolkit (PDF)
                 </a>
-        <!-- Updated Navigation -->
-<div class="nav-links">
-    <a href="index.html">Home</a>
-    
-    <!-- Leadership Speeches Dropdown -->
-    <div class="dropdown">
-        <button class="dropbtn">Leadership Speeches 
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="leadership-speeches.html">Featured Speeches</a>
-            <a href="authentic-leadership.html">Authentic Leadership</a>
-            <!-- Add other speech topics here if needed -->
-        </div>
-    </div>
-    
-    <!-- Pathways Dropdown -->
-    <div class="dropdown">
-        <button class="dropbtn">Pathways 
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="dynamic-leadership.html">Dynamic Leadership</a>
-            <a href="engaging-humor.html">Engaging Humor</a>
-            <!-- Add other pathway resources here -->
-        </div>
-    </div>
-    
-    <!-- TLI Dropdown -->
-    <div class="dropdown">
-        <button class="dropbtn">TLI Resources 
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="TLI-Resources/index.html">Master Resources Hub</a>
-            <a href="tli-crafting-story.html">Crafting Your Story</a>
-            <a href="tli-digital-pr.html">Digital PR</a>
-        </div>
-    </div>
-    
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-</div>
-	
-    
-    <!-- Pathways Dropdown -->
-    <div class="dropdown">
-        <button class="dropbtn">Pathways 
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="dynamic-leadership.html">Dynamic Leadership</a>
-            <a href="engaging-humor.html">Engaging Humor</a>
-            <!-- Add other pathway resources here -->
-        </div>
-    </div>
-    
-    <!-- TLI Dropdown -->
-	<a href="/TLI Resources/index.html" class="highlight">TLI Resources Hub</a> <!-- Add this -->
-    <div class="dropdown">
-        <button class="dropbtn">TLI Resources 
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="tli-crafting-story.html">Crafting Your Story</a>
-            <a href="tli-digital-pr.html">Digital PR</a>
-        </div>
-    </div>
-    
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-</div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="floating-shapes">
-                <!-- Animated background shapes -->
-                <div class="shape" style="width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s;"></div>
-                <div class="shape" style="width: 150px; height: 150px; top: 70%; left: 80%; animation-delay: 2s;"></div>
-                <div class="shape" style="width: 60px; height: 60px; top: 40%; left: 60%; animation-delay: 4s;"></div>
-                <div class="shape" style="width: 80px; height: 80px; top: 80%; left: 30%; animation-delay: 6s;"></div>
+                <a href="mailto:pr@d106tm.org" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-bold">
+                    Get Personalized Help
+                </a>
             </div>
-            <div class="hero-content">
-                <h1 class="floating">Leadership That <span style="color: var(--yellow);">Inspires</span> Action</h1>
-                <p class="animate delay-1">Transform your communication and leadership skills with powerful, purpose-driven speeches that resonate across generations.</p>
-                <div class="hero-buttons">
-                    <a href="#featured" class="btn btn-primary animate delay-2">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-                        </svg>
-                        Featured Speeches
-                    </a>
-                    <a href="about.html" class="btn btn-outline animate delay-2">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                        </svg>
-                        Meet Leo
-                    </a>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Stats Section -->
-        <section class="stats">
-            <div class="stats-container">
-                <div class="stat-item animate">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item animate delay-1">
-                    <div class="stat-number">300+</div>
-                    <div class="stat-label">Speeches Delivered</div>
-                </div>
-                <div class="stat-item animate delay-2">
-                    <div class="stat-number">1K+</div>
-                    <div class="stat-label">People Inspired</div>
-                </div>
-                <div class="stat-item animate delay-3">
-                    <div class="stat-number">DTM</div>
-                    <div class="stat-label">Distinguished Toastmaster</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Video CTA Section -->
-        <section class="video-cta">
-            <h2 class="animate">Experience the Power of Leadership Communication</h2>
-            <p class="animate delay-1">Watch my recent keynote on purpose-driven leadership that resonates across generations.</p>
-            <div class="video-container animate delay-2">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Leadership keynote preview" class="video-thumbnail">
-                <div class="play-button">
-                    <svg class="play-icon" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-maroon text-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="mb-6">
+                <a href="index.html" class="font-bold text-yellow-300 text-xl inline-flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm-1 13v-4h2v4h-2zm0-6V6h2v3h-2z"/>
                     </svg>
-                </div>
+                    District 106 TLI
+                </a>
             </div>
-        </section>
-
-        <!-- Featured Speeches -->
-        <section id="featured" class="speeches">
-            <div class="speeches-container">
-                <h2 class="section-title">Featured Leadership Speeches</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;" class="animate">Explore my most requested leadership speeches that bridge generations and inspire action.</p>
-                
-                <div class="speech-grid">
-                    <div class="speech-card animate">
-                        <div class="speech-tag">Most Popular</div>
-                        <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
-                        <div class="speech-content">
-                            <h3>Inspiring Action Through Purpose-Driven Leadership</h3>
-                            <p>Discover how to ignite passion and loyalty by leading with purpose rather than just tasks.</p>
-                            <a href="leadership-speeches.html#purpose-driven" class="btn btn-primary" style="display: inline-block; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Speech</a>
-                        </div>
-                    </div>
-                    
-                    <div class="speech-card animate delay-1">
-                        <div class="speech-tag">For Millennials</div>
-                        <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
-                        <div class="speech-content">
-                            <h3>Leading with Emotional Intelligence</h3>
-                            <p>Learn how empathy and self-awareness can transform your leadership and build unstoppable teams.</p>
-                            <a href="leadership-speeches.html#emotional-intelligence" class="btn btn-primary" style="display: inline-block; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Speech</a>
-                        </div>
-                    </div>
-                    
-                    <div class="speech-card animate delay-2">
-                        <div class="speech-tag">For Boomers</div>
-                        <div class="speech-image" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
-                        <div class="speech-content">
-                            <h3>Leading Through Crisis with Purpose</h3>
-                            <p>Master the art of crisis leadership with clear communication and focused priorities.</p>
-                            <a href="leadership-speeches.html#crisis-leadership" class="btn btn-primary" style="display: inline-block; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Speech</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex flex-wrap justify-center gap-6 mb-6">
+                <a href="turbocharge.html" class="hover:text-yellow-300">Turbocharge</a>
+                <a href="creative-promotion.html" class="hover:text-yellow-300">Creative Promotion</a>
+                <a href="launch-legends.html" class="hover:text-yellow-300">Launch Legends</a>
+                <a href="supercharge.html" class="hover:text-yellow-300">Supercharge</a>
+                <a href="mailto:pr@d106tm.org" class="hover:text-yellow-300">Contact</a>
             </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials">
-            <div class="testimonials-container">
-                <h2 class="section-title">What People Are Saying</h2>
-                
-                <div class="testimonial-grid">
-                    <div class="testimonial-card animate">
-                        <p class="testimonial-text">"Leo's speech on purpose-driven leadership transformed how our executive team communicates. We've seen engagement scores rise 40% in just six months."</p>
-                        <p class="testimonial-author">— Sarah Johnson, CEO TechForward</p>
-                    </div>
-                    
-                    <div class="testimonial-card animate delay-1">
-                        <p class="testimonial-text">"As a millennial manager, Leo's emotional intelligence framework helped me bridge the gap with my Gen X and Boomer team members. Practical and powerful!"</p>
-                        <p class="testimonial-author">— Michael Chen, Product Manager</p>
-                    </div>
-                    
-                    <div class="testimonial-card animate delay-2">
-                        <p class="testimonial-text">"After 30 years in leadership, I thought I'd heard it all. Leo's fresh perspective on people-centered leadership reignited my passion for developing teams."</p>
-                        <p class="testimonial-author">— Robert Williams, Retired COO</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter -->
-        <section class="newsletter">
-            <div class="newsletter-container">
-                <h2 class="animate">Get Leadership Insights</h2>
-                <p class="animate delay-1">Join my newsletter for monthly leadership tips, speech excerpts, and event announcements.</p>
-                <form class="newsletter-form animate delay-2">
-                    <input type="email" placeholder="Your email address" class="newsletter-input" required>
-                    <button type="submit" class="newsletter-button">Subscribe</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <a href="index.html" class="footer-logo">Leo Smith, DTM</a>
-                <p>Inspiring action through powerful communication and purpose-driven leadership.</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Speeches</h3>
-                <ul>
-                    <li><a href="purpose-driven-leadership.html">Purpose-Driven Leadership</a></li>
-                    <li><a href="emotional-intelligence.html">Emotional Intelligence</a></li>
-                    <li><a href="crisis-leadership.html">Crisis Leadership</a></li>
-                    <li><a href="people-centered.html">People-Centered Leadership</a></li>
-                    <li><a href="leadership-speeches.html">View All</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Leo</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Leo Smith, DTM. All rights reserved.</p>
+            <p class="text-sm text-gray-300">© 2025 District 106 Toastmasters. All resources created by Leo Smith, DTM.</p>
         </div>
     </footer>
-
-    <script>
-        // Simple animation trigger
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.animate');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            animateElements.forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-            
-            // Video play button functionality
-            const playButton = document.querySelector('.play-button');
-            if (playButton) {
-                playButton.addEventListener('click', function() {
-                    alert('Video playback would start here in a real implementation.');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
-
