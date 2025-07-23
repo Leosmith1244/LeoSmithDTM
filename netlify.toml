@@ -1,0 +1,4 @@
+[[plugins]]
+package = "netlify-plugin-include-files"
+  [plugins.inputs]
+  sources = ["partials/*"]
