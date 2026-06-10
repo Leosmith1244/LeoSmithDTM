@@ -65,7 +65,7 @@
       display: flex;
       align-items: center;
       background:
-        linear-gradient(rgba(0, 25, 45, .56), rgba(119, 36, 50, .76)),
+        linear-gradient(rgba(0, 25, 45, .66), rgba(119, 36, 50, .78)),
         url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
       overflow: hidden;
     }
@@ -85,6 +85,10 @@
       width: 100%;
       position: relative;
       z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 46px;
+      align-items: center;
     }
     .eyebrow {
       display: inline-block;
@@ -98,10 +102,10 @@
       margin-bottom: 18px;
     }
     .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5.4rem);
+      font-size: clamp(2.8rem, 6vw, 5.35rem);
       line-height: 1.02;
       margin: 0 0 18px;
-      max-width: 900px;
+      max-width: 920px;
     }
     .hero p {
       max-width: 760px;
@@ -131,6 +135,49 @@
       border: 2px solid rgba(255,255,255,.9);
       color: var(--white);
     }
+
+    .headshot-wrap {
+      justify-self: center;
+      width: min(340px, 100%);
+    }
+    .headshot-card {
+      position: relative;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.32);
+      backdrop-filter: blur(6px);
+    }
+    .headshot-card::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 34px;
+      border: 2px solid rgba(242,223,116,.34);
+      pointer-events: none;
+    }
+    .headshot-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+    .caption-card {
+      margin-top: 16px;
+      background: rgba(0,65,101,.9);
+      border: 1px solid rgba(242,223,116,.35);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .caption-card strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 1.05rem;
+    }
+
     .hero-grid {
       margin-top: 34px;
       display: grid;
@@ -268,6 +315,26 @@
     .checklist li:last-child { border-bottom: none; }
     .checklist strong { color: var(--blue); }
 
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .proof {
+      background: #fff;
+      border: 1px solid #e4e8eb;
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+    }
+    .proof strong {
+      display: block;
+      font-size: 1.15rem;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
     .ribbon {
       background: linear-gradient(135deg, var(--blue), var(--maroon));
       color: var(--white);
@@ -322,7 +389,9 @@
     footer a { color: var(--yellow); }
     .small { color: rgba(255,255,255,.78); font-size: .95rem; }
 
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .headshot-wrap { justify-self: start; max-width: 320px; }
       .split { grid-template-columns: 1fr; }
       .image-panel { min-height: 320px; }
     }
@@ -350,32 +419,44 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <div class="eyebrow">Speaker • Mentor • Toastmasters Leader • Systems Builder</div>
-        <h1>Better Speaking. <span class="highlight">Stronger Leadership.</span> Less Guesswork.</h1>
-        <p>I help speakers, leaders, and Toastmasters clubs turn scattered ideas into clear messages, stronger delivery, useful feedback, and action people can actually use.</p>
-        <div class="button-row">
-          <a class="btn btn-primary" href="leadership-speeches.html">Explore Programs</a>
-          <a class="btn btn-secondary" href="contact.html">Start a Conversation</a>
+        <div>
+          <div class="eyebrow">Speaker • Mentor • Toastmasters Leader • Systems Builder</div>
+          <h1>Better Speaking. <span class="highlight">Stronger Leadership.</span> Less Guesswork.</h1>
+          <p>I help speakers, leaders, and Toastmasters clubs turn scattered ideas into clear messages, stronger delivery, useful feedback, and action people can actually use.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="leadership-speeches.html">Explore Programs</a>
+            <a class="btn btn-secondary" href="contact.html">Start a Conversation</a>
+          </div>
+
+          <div class="hero-grid">
+            <div class="hero-card">
+              <strong>DTM</strong>
+              Distinguished Toastmaster
+            </div>
+            <div class="hero-card">
+              <strong>40+ years</strong>
+              Print, mail, production, and operations experience
+            </div>
+            <div class="hero-card">
+              <strong>Practical systems</strong>
+              Speech, evaluation, PR, and execution tools
+            </div>
+            <div class="hero-card">
+              <strong>Built for use</strong>
+              Clear, memorable, and actually useful
+            </div>
+          </div>
         </div>
 
-        <div class="hero-grid">
-          <div class="hero-card">
-            <strong>DTM</strong>
-            Distinguished Toastmaster
+        <aside class="headshot-wrap" aria-label="Leo Smith headshot and credibility summary">
+          <div class="headshot-card">
+            <img src="images/Leo_Smith.jpg" alt="Leo Smith, DTM">
           </div>
-          <div class="hero-card">
-            <strong>40+ years</strong>
-            Print, mail, production, and operations experience
+          <div class="caption-card">
+            <strong>Leo Smith, DTM</strong>
+            Practical communication. Real-world leadership. Systems that help people move.
           </div>
-          <div class="hero-card">
-            <strong>Practical systems</strong>
-            Speech, evaluation, PR, and execution tools
-          </div>
-          <div class="hero-card">
-            <strong>Built for use</strong>
-            Clear, memorable, and actually useful
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
 
@@ -436,6 +517,31 @@
     </section>
 
     <section class="gray">
+      <div class="wrap center">
+        <h2>Credibility without the fog machine</h2>
+        <p class="lead">No fake testimonials. No made-up guru numbers. Just the practical proof that matters: experience, service, systems, and useful work.</p>
+      </div>
+      <div class="wrap proof-grid">
+        <div class="proof">
+          <strong>Distinguished Toastmaster</strong>
+          Years of speaking, leadership, mentoring, education, and service inside Toastmasters.
+        </div>
+        <div class="proof">
+          <strong>Club and district leadership</strong>
+          Hands-on experience supporting clubs, officers, training, promotion, and member growth.
+        </div>
+        <div class="proof">
+          <strong>Production and operations background</strong>
+          A systems-first approach shaped by decades in print, mail, logistics, and process improvement.
+        </div>
+        <div class="proof">
+          <strong>Practical resource builder</strong>
+          Run-of-show tools, evaluation guides, delivery engines, club PR systems, and workshop structures.
+        </div>
+      </div>
+    </section>
+
+    <section>
       <div class="wrap split">
         <div class="panel">
           <h2>What makes Leo different?</h2>
@@ -561,7 +667,7 @@
           <a class="btn btn-primary" href="contact.html">Contact Leo</a>
           <a class="btn btn-secondary" href="resources/index.html">Browse Resources</a>
         </div>
-        <p class="small" style="margin-top:18px;">This homepage uses remote Unsplash imagery, so no separate image upload is needed.</p>
+        <p class="small" style="margin-top:18px;">This page references your headshot at <strong>images/Leo_Smith.jpg</strong>.</p>
       </div>
     </section>
   </main>
