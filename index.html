@@ -78,10 +78,10 @@
     .center { text-align: center; }
 
     h1 {
-      font-size: clamp(2.8rem, 6vw, 5.35rem);
+      font-size: clamp(2.55rem, 5.4vw, 5rem);
       line-height: 1.02;
       margin: 0 0 18px;
-      max-width: 920px;
+      max-width: 860px;
     }
 
     h2 {
@@ -119,13 +119,13 @@
     .hero-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 96px 24px 84px;
+      padding: 72px 24px 58px;
       width: 100%;
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
-      gap: 46px;
+      grid-template-columns: minmax(0, .95fr) minmax(320px, 420px);
+      gap: 42px;
       align-items: center;
     }
 
@@ -142,9 +142,9 @@
     }
 
     .hero p {
-      max-width: 760px;
-      font-size: 1.2rem;
-      margin: 0 0 22px;
+      max-width: 740px;
+      font-size: 1.12rem;
+      margin: 0 0 20px;
     }
 
     .button-row {
@@ -256,22 +256,22 @@
       background: rgba(255,255,255,.10);
       border: 1px solid rgba(255,255,255,.24);
       border-radius: 28px;
-      padding: 18px;
-      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+      padding: 16px;
+      box-shadow: 0 22px 52px rgba(0,0,0,.24);
       display: grid;
-      gap: 16px;
+      gap: 13px;
     }
 
     .profile-row {
       display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 16px;
+      grid-template-columns: 82px 1fr;
+      gap: 14px;
       align-items: center;
     }
 
     .profile-photo {
-      width: 96px;
-      height: 96px;
+      width: 82px;
+      height: 82px;
       border-radius: 999px;
       object-fit: cover;
       border: 3px solid var(--yellow);
@@ -280,30 +280,77 @@
 
     .profile-card h2 {
       color: var(--yellow);
-      margin: 0 0 4px;
-      font-size: 1.25rem;
+      margin: 0 0 3px;
+      font-size: 1.18rem;
     }
 
     .profile-card p {
       margin: 0;
       color: rgba(255,255,255,.86);
-      font-size: .98rem;
+      font-size: .94rem;
+      line-height: 1.45;
     }
 
     .preview-thumb {
       background: rgba(255,255,255,.12);
       border: 1px solid rgba(255,255,255,.18);
       border-radius: 20px;
-      padding: 10px;
+      padding: 8px;
     }
 
     .preview-thumb img {
       width: 100%;
       border-radius: 14px;
-      aspect-ratio: 1.45 / 1;
+      aspect-ratio: 1.55 / 1;
       object-fit: contain;
       background: #f0f3f5;
-      padding: 8px;
+      padding: 7px;
+    }
+
+
+    .tool-rack {
+      padding: 46px 24px 60px;
+      background: var(--white);
+    }
+
+    .tool-rack .lead {
+      margin-bottom: 24px;
+    }
+
+    .tool-card {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      border-top: 7px solid var(--blue);
+    }
+
+    .tool-card:nth-child(2) {
+      border-top-color: var(--maroon);
+    }
+
+    .tool-card h3 {
+      font-size: 1.55rem;
+    }
+
+    .tool-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .tool-card .mini-list {
+      margin-top: 14px;
+    }
+
+    .tool-card .button-row {
+      margin-top: 18px;
+    }
+
+    .quiet-note {
+      margin: 22px auto 0;
+      max-width: 760px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 700;
     }
 
     .gallery-grid {
@@ -362,7 +409,53 @@
       .grid-3,
       .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-      .gallery-grid { grid-template-columns: 1fr; }
+  
+    .tool-rack {
+      padding: 46px 24px 60px;
+      background: var(--white);
+    }
+
+    .tool-rack .lead {
+      margin-bottom: 24px;
+    }
+
+    .tool-card {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      border-top: 7px solid var(--blue);
+    }
+
+    .tool-card:nth-child(2) {
+      border-top-color: var(--maroon);
+    }
+
+    .tool-card h3 {
+      font-size: 1.55rem;
+    }
+
+    .tool-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .tool-card .mini-list {
+      margin-top: 14px;
+    }
+
+    .tool-card .button-row {
+      margin-top: 18px;
+    }
+
+    .quiet-note {
+      margin: 22px auto 0;
+      max-width: 760px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .gallery-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
@@ -372,7 +465,7 @@
         margin-right: 14px;
       }
 
-      .hero-inner { padding: 62px 20px; }
+      .hero-inner { padding: 48px 20px 44px; }
       section { padding: 58px 20px; }
       .grid-3,
       .grid-4 { grid-template-columns: 1fr; }
@@ -413,7 +506,7 @@
             <img class="profile-photo" src="images/Leo_Smith.jpg" alt="Leo Smith, DTM">
             <div>
               <h2>Leo Smith, DTM</h2>
-              <p>Fellow Toastmaster sharing speech tools, club PR prompts, AI experiments, and meeting-room resources.</p>
+              <p>Fellow Toastmaster sharing tools, prompts, and field-tested meeting-room experiments.</p>
             </div>
           </div>
 
@@ -421,49 +514,49 @@
             <img src="images/speakeros/pickup-run-of-show-map.png" alt="Run of Show Visual Map example from SpeakerOS Coach">
           </div>
 
-          <p>Example: one speech can become a run of show, timing guide, evaluator resource, delivery card, recovery dashboard, and promo asset.</p>
+          <p>One speech can become delivery notes, timing maps, evaluator guides, and promo assets.</p>
         </aside>
       </div>
     </section>
 
-    <section id="tools">
+    <section id="tools" class="tool-rack">
       <div class="wrap center">
-        <h2>Start with the tools</h2>
-        <p class="lead">The two main experiments right now: one for speakers, one for club PR. Use them as starting points, not sacred tablets.</p>
+        <h2>Start with the two main tools</h2>
+        <p class="lead">One is for speeches. One is for club PR. Both are meant to get you unstuck faster, then let your own judgment take over.</p>
       </div>
 
       <div class="wrap grid-2">
-        <article class="card">
+        <article class="card tool-card">
           <span class="tag">Speech building</span>
           <h3>SpeakerOS Coach</h3>
-          <p>A speech-building assistant for turning rough ideas into clearer structure, better timing, stronger delivery notes, evaluator resources, and promo-ready support assets.</p>
+          <p>Turn a rough speech idea into message structure, timing maps, delivery notes, evaluator guides, and promo-ready support assets.</p>
           <ul class="mini-list">
-            <li>Clarify the core message and audience promise</li>
-            <li>Map timing, pacing, and compression points</li>
-            <li>Create delivery engine cards and evaluator guides</li>
-            <li>Generate promo assets around the speech</li>
+            <li>Find the core message</li>
+            <li>Map timing and pacing</li>
+            <li>Create evaluator and delivery resources</li>
           </ul>
-          <div class="button-row" style="margin-top:22px;">
-            <a class="btn btn-primary" href="speakeros.html">See what SpeakerOS creates</a>
-            <a class="btn btn-secondary" href="https://chatgpt.com/g/g-6a2993bb7c7481919d8ac748403832c9-speakeros-coach" target="_blank" rel="noopener noreferrer" style="color:var(--blue);border-color:var(--blue);">Open the GPT</a>
+          <div class="button-row">
+            <a class="btn btn-primary" href="speakeros.html">See examples</a>
+            <a class="btn btn-secondary" href="https://chatgpt.com/g/g-6a2993bb7c7481919d8ac748403832c9-speakeros-coach" target="_blank" rel="noopener noreferrer" style="color:var(--blue);border-color:var(--blue);">Open GPT</a>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card tool-card">
           <span class="tag">Club PR / Visibility</span>
           <h3>Toastmasters PRC Expert</h3>
-          <p>A practical assistant for club officers, VP-PRs, and Toastmasters leaders who need clearer posts, recaps, invitations, messaging, and visibility ideas.</p>
+          <p>Create clearer meeting recaps, guest invitations, officer posts, club positioning, and visibility ideas without starting from a blank page.</p>
           <ul class="mini-list">
-            <li>Draft meeting recap posts faster</li>
-            <li>Turn vague club value into clearer guest-facing copy</li>
-            <li>Create PR ideas that fit Toastmasters culture</li>
+            <li>Draft recaps and posts</li>
+            <li>Clarify guest-facing language</li>
             <li>Build repeatable visibility habits</li>
           </ul>
-          <div class="button-row" style="margin-top:22px;">
+          <div class="button-row">
             <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a29b30988008191a48b56a10f163b3b-toastmasters-prc-expert" target="_blank" rel="noopener noreferrer">Open PRC Expert</a>
           </div>
         </article>
       </div>
+
+      <p class="quiet-note">Use the tools like a workbench: take what helps, adjust what does not, and bring the useful version back to the room.</p>
     </section>
 
     <section class="gray">
