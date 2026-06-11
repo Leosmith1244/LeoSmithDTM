@@ -3,22 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leo Smith, DTM | Better Speaking. Stronger Leadership.</title>
-  <meta name="description" content="Leo Smith, DTM helps speakers, leaders, and Toastmasters clubs turn scattered ideas into clear messages, stronger delivery, better evaluations, and visible action.">
+
+  <title>Leo Smith, DTM | Clearer Speeches. Stronger Club Systems.</title>
+  <meta name="description" content="Leo Smith, DTM helps Toastmasters speakers, club officers, and volunteer leaders turn scattered ideas into clear speeches, practical training, club visibility systems, and usable next steps.">
+  <meta property="og:title" content="Leo Smith, DTM | Clearer Speeches. Stronger Club Systems.">
+  <meta property="og:description" content="Practical speaking, club visibility, training, and communication systems for people who need the room to understand, remember, and act.">
+  <meta property="og:type" content="website">
 
   <style>
     :root {
-      --maroon: #772432;
       --blue: #004165;
+      --blue-dark: #00263a;
+      --maroon: #772432;
       --yellow: #F2DF74;
-      --gray: #f4f6f7;
-      --ink: #1f2933;
-      --muted: #5f6b76;
+      --gray-50: #f8fafb;
+      --gray-100: #eef2f4;
+      --gray-200: #dce4e8;
+      --gray-700: #44515c;
+      --ink: #17212b;
       --white: #ffffff;
-      --line: #e4e8eb;
-      --shadow: 0 16px 38px rgba(0,0,0,.14);
-      --soft-shadow: 0 10px 26px rgba(0,0,0,.07);
-      --header-offset: 88px;
+      --header-offset: 92px;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --shadow: 0 22px 60px rgba(0, 0, 0, .16);
+      --soft-shadow: 0 12px 32px rgba(0, 0, 0, .08);
     }
 
     * { box-sizing: border-box; }
@@ -30,133 +38,180 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
       color: var(--ink);
       background: var(--white);
-      line-height: 1.6;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
     }
+
+    img { max-width: 100%; }
 
     a { color: inherit; }
 
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 999;
+      background: var(--yellow);
+      color: #111;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .skip-link:focus { left: 12px; }
+
     header {
-      background: rgba(0,65,101,.96);
-      color: var(--white);
-      padding: 18px 24px;
       position: sticky;
       top: 0;
       z-index: 100;
+      background: rgba(0, 65, 101, .96);
       backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.12);
     }
 
     .nav {
       max-width: 1180px;
       margin: 0 auto;
+      padding: 15px 24px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      gap: 14px;
+      justify-content: space-between;
+      gap: 18px;
     }
 
     .logo {
-      color: var(--yellow);
-      font-weight: 800;
-      font-size: 1.25rem;
       text-decoration: none;
+      color: var(--white);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+
+    .logo span {
+      display: block;
+      color: var(--yellow);
+      font-size: .76rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
       color: var(--white);
       text-decoration: none;
-      margin-left: 18px;
-      font-weight: 700;
+      font-weight: 750;
+      font-size: .95rem;
     }
 
-    nav a:hover,
-    nav a:focus { color: var(--yellow); }
+    nav a:hover { color: var(--yellow); }
+
+    .nav-cta {
+      color: #111;
+      background: var(--yellow);
+      padding: 9px 14px;
+      border-radius: 999px;
+      box-shadow: 0 10px 20px rgba(0,0,0,.16);
+    }
+
+    nav a.nav-cta:hover { color: #111; }
 
     .hero {
-      position: relative;
+      background:
+        radial-gradient(circle at top left, rgba(242, 223, 116, .18), transparent 33%),
+        radial-gradient(circle at bottom right, rgba(119, 36, 50, .30), transparent 34%),
+        linear-gradient(135deg, var(--blue-dark), var(--blue));
       color: var(--white);
-      display: flex;
-      align-items: center;
-      background-color: #00192d;
-      background-image:
-        linear-gradient(rgba(0, 25, 45, .70), rgba(119, 36, 50, .80)),
-        url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
+    .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at top right, rgba(242,223,116,.20), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(255,255,255,.08), transparent 24%);
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: .55;
       pointer-events: none;
     }
 
     .hero-inner {
+      position: relative;
+      z-index: 1;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 96px 24px 84px;
-      width: 100%;
-      position: relative;
-      z-index: 2;
+      padding: 92px 24px 78px;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
-      gap: clamp(28px, 4vw, 54px);
+      grid-template-columns: minmax(0, 1fr) minmax(290px, 370px);
+      gap: 52px;
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-block;
-      background: rgba(242,223,116,.18);
-      color: var(--yellow);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       border: 1px solid rgba(242,223,116,.45);
-      padding: 8px 14px;
+      background: rgba(242,223,116,.13);
+      color: var(--yellow);
       border-radius: 999px;
-      font-weight: 800;
-      letter-spacing: .03em;
-      margin-bottom: 18px;
+      padding: 8px 13px;
+      font-size: .9rem;
+      font-weight: 850;
+      letter-spacing: .02em;
+      margin-bottom: 20px;
     }
 
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5.35rem);
-      line-height: 1.02;
-      margin: 0 0 18px;
+    h1, h2, h3 { line-height: 1.08; }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(3rem, 6.2vw, 5.75rem);
+      letter-spacing: -.065em;
       max-width: 920px;
     }
 
-    .hero p {
-      max-width: 760px;
-      font-size: 1.2rem;
+    .hero-lede {
       margin: 0 0 28px;
+      max-width: 760px;
+      color: rgba(255,255,255,.90);
+      font-size: clamp(1.08rem, 2vw, 1.33rem);
     }
-
-    .highlight { color: var(--yellow); }
 
     .button-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 13px;
+      align-items: center;
+      margin-bottom: 22px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 13px 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 999px;
-      font-weight: 800;
+      padding: 13px 22px;
+      font-weight: 850;
       text-decoration: none;
-      transition: transform .15s ease, opacity .15s ease;
+      min-height: 48px;
+      transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease;
     }
 
-    .btn:hover,
-    .btn:focus {
+    .btn:hover {
       transform: translateY(-1px);
       opacity: .96;
     }
@@ -164,65 +219,59 @@
     .btn-primary {
       background: var(--yellow);
       color: #111;
+      box-shadow: 0 14px 28px rgba(0,0,0,.18);
     }
 
     .btn-secondary {
-      border: 2px solid rgba(255,255,255,.9);
       color: var(--white);
+      border: 2px solid rgba(255,255,255,.78);
     }
 
-    .hero-proofline {
-      margin-top: 22px;
-      color: rgba(255,255,255,.86);
-      max-width: 680px;
-      font-weight: 700;
+    .hero-note {
+      max-width: 650px;
+      color: rgba(255,255,255,.72);
+      font-weight: 650;
+      font-size: .98rem;
     }
 
-    .headshot-wrap {
-      justify-self: center;
-      width: min(340px, 100%);
-    }
-
-    .headshot-card {
-      position: relative;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.24);
-      border-radius: 28px;
+    .hero-card {
+      background: rgba(255,255,255,.11);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--radius-lg);
       padding: 18px;
-      box-shadow: 0 24px 60px rgba(0,0,0,.32);
-      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
     }
 
-    .headshot-card::before {
-      content: "";
-      position: absolute;
-      inset: -10px;
-      border-radius: 34px;
-      border: 2px solid rgba(242,223,116,.34);
-      pointer-events: none;
-    }
-
-    .headshot-card img {
+    .headshot {
       display: block;
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.28);
     }
 
-    .caption-card {
-      margin-top: 16px;
-      background: rgba(0,65,101,.9);
-      border: 1px solid rgba(242,223,116,.35);
-      color: var(--white);
-      border-radius: 18px;
-      padding: 16px;
+    .fit-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
     }
 
-    .caption-card strong {
-      display: block;
+    .fit-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.88);
+      font-weight: 650;
+    }
+
+    .fit-list li::before {
+      content: "✓";
+      flex: 0 0 auto;
       color: var(--yellow);
-      font-size: 1.05rem;
+      font-weight: 900;
     }
 
     section { padding: 76px 24px; }
@@ -232,325 +281,277 @@
       margin: 0 auto;
     }
 
+    .narrow {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
     .center { text-align: center; }
 
     h2 {
-      color: var(--maroon);
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      line-height: 1.08;
       margin: 0 0 16px;
+      color: var(--maroon);
+      font-size: clamp(2.1rem, 4.3vw, 3.55rem);
+      letter-spacing: -.045em;
     }
 
     h3 {
       color: var(--blue);
-      margin-top: 0;
-      line-height: 1.2;
+      font-size: 1.35rem;
+      margin: 0 0 9px;
+      letter-spacing: -.015em;
     }
 
     .lead {
-      max-width: 820px;
       margin: 0 auto 34px;
-      color: var(--muted);
-      font-size: 1.08rem;
+      max-width: 820px;
+      color: var(--gray-700);
+      font-size: 1.1rem;
     }
 
-    .gray { background: var(--gray); }
+    .gray { background: var(--gray-50); }
 
-    .routing-grid {
+    .problem-strip {
+      transform: translateY(-26px);
+      margin-bottom: -26px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .problem-box {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .problem-box h2 {
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      margin-bottom: 0;
+    }
+
+    .problem-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 10px;
-    }
-
-    .route-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .route-top {
-      min-height: 176px;
-      background-color: var(--blue);
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    .route-top::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.12));
-    }
-
-    .badge {
-      position: absolute;
-      z-index: 2;
-      top: 16px;
-      left: 16px;
-      background: var(--yellow);
-      color: #111;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-size: .85rem;
-    }
-
-    .route-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .route-body p { color: var(--muted); }
-
-    .meta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 14px 0 20px;
-    }
-
-    .meta span {
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--blue);
-      background: #eef5f8;
-      padding: 7px 10px;
-      border-radius: 999px;
-    }
-
-    .subfeature {
-      border-top: 1px solid var(--line);
-      margin-top: auto;
-      padding-top: 16px;
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .subfeature small {
-      display: block;
-      color: var(--muted);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 4px;
-    }
-
-    .ghost-link {
-      display: inline-block;
-      margin-top: 18px;
-      text-decoration: none;
-      font-weight: 800;
-      color: var(--maroon);
-    }
-
-    .credential-anchor {
-      padding-top: 40px;
-      padding-bottom: 44px;
-      background: var(--white);
-    }
-
-    .credential-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .credential-header h2 {
-      font-size: clamp(1.75rem, 3vw, 2.65rem);
-      margin: 0;
-    }
-
-    .credential-header p {
-      max-width: 540px;
-      margin: 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .credential-rail {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .credential {
-      background: #fff;
-      border: 1px solid var(--line);
+    .problem-item {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
       border-radius: 18px;
-      padding: 18px;
+      padding: 16px;
+      font-weight: 750;
+    }
+
+    .route-grid,
+    .work-grid,
+    .proof-grid,
+    .credential-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 24px;
       box-shadow: var(--soft-shadow);
     }
 
-    .credential h3 {
-      color: var(--maroon);
-      font-size: 1.08rem;
-      margin: 0 0 8px;
-    }
-
-    .credential p {
+    .card p {
+      color: var(--gray-700);
       margin: 0;
-      color: var(--muted);
     }
 
-    .proof-layout {
+    .card .tag {
+      display: inline-flex;
+      background: #eef6fa;
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: .82rem;
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--maroon);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .card-link:hover { text-decoration: underline; }
+
+    .mini-list {
+      margin: 17px 0 0;
+      padding-left: 1.05rem;
+      color: var(--gray-700);
+    }
+
+    .mini-list li { margin: 8px 0; }
+
+    .offer {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: var(--white);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .offer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(242,223,116,.20), transparent 28%),
+        radial-gradient(circle at 88% 70%, rgba(119,36,50,.38), transparent 34%);
+      pointer-events: none;
+    }
+
+    .offer .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .offer h2 { color: var(--yellow); }
+
+    .offer .lead { color: rgba(255,255,255,.86); }
+
+    .work-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .work-card {
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .work-card h3 { color: var(--yellow); }
+
+    .work-card p,
+    .work-card li { color: rgba(255,255,255,.86); }
+
+    .price-note {
+      margin-top: 26px;
+      background: rgba(242,223,116,.14);
+      border: 1px solid rgba(242,223,116,.38);
+      border-radius: 18px;
+      padding: 18px 20px;
+      color: rgba(255,255,255,.90);
+      font-weight: 700;
+    }
+
+    .demo-layout {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
+      grid-template-columns: .85fr 1.15fr;
       gap: 28px;
       align-items: start;
     }
 
-    .proof-intro {
-      background: var(--blue);
+    .demo-panel {
+      background: #111827;
       color: var(--white);
-      border-radius: 26px;
+      border-radius: var(--radius-lg);
       padding: 30px;
       box-shadow: var(--shadow);
     }
 
-    .proof-intro h2 {
-      color: var(--yellow);
-      font-size: clamp(2rem, 3vw, 2.85rem);
-    }
+    .demo-panel h2 { color: var(--yellow); }
 
-    .proof-intro p { color: rgba(255,255,255,.9); }
+    .demo-panel p { color: rgba(255,255,255,.84); }
 
-    .proof-list {
+    .demo-list {
       display: grid;
       gap: 16px;
     }
 
-    .field-proof {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
+    .demo-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
       padding: 22px;
       box-shadow: var(--soft-shadow);
     }
 
-    .field-proof h3 {
-      color: var(--blue);
-      font-size: 1.15rem;
-      margin: 0 0 8px;
+    .demo-item h3 {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
     }
 
-    .field-proof p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .difference-wrap {
-      display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .panel {
-      background: var(--white);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--line);
-    }
-
-    .image-panel {
-      min-height: 460px;
-      border-radius: 26px;
-      background-color: #e8eef1;
-      background-image:
-        linear-gradient(rgba(0,65,101,.12), rgba(119,36,50,.18)),
-        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      box-shadow: var(--shadow);
-    }
-
-    .checklist {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .checklist li {
-      padding: 12px 0;
-      border-bottom: 1px solid #e7ecef;
-    }
-
-    .checklist li:last-child { border-bottom: none; }
-    .checklist strong { color: var(--blue); }
-
-    .ribbon {
-      background: linear-gradient(135deg, var(--blue), var(--maroon));
-      color: var(--white);
-    }
-
-    .ribbon h2 { color: var(--yellow); }
-    .ribbon .lead { color: rgba(255,255,255,.88); }
-
-    .os-list {
-      display: grid;
-      gap: 18px;
-      margin-top: 34px;
-    }
-
-    .os-step {
-      display: grid;
-      grid-template-columns: 86px 1fr;
-      gap: 22px;
-      align-items: center;
-      padding: 22px 0;
-      border-top: 1px solid rgba(255,255,255,.22);
-    }
-
-    .os-step:last-child {
-      border-bottom: 1px solid rgba(255,255,255,.22);
-    }
-
-    .os-number {
-      color: var(--yellow);
-      font-size: 2.5rem;
+    .demo-item h3 span {
+      color: var(--maroon);
+      font-size: .9rem;
       font-weight: 900;
-      line-height: 1;
+      letter-spacing: .09em;
+      text-transform: uppercase;
     }
 
-    .os-step h3 {
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      counter-reset: step;
+      margin-top: 32px;
+    }
+
+    .step {
+      counter-increment: step;
+      position: relative;
+      padding: 28px 24px 24px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .step::before {
+      content: counter(step, decimal-leading-zero);
       display: block;
-      color: var(--white);
-      font-size: clamp(1.5rem, 3vw, 2.25rem);
-      line-height: 1.05;
-      margin: 0 0 4px;
+      color: var(--maroon);
+      font-weight: 950;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 16px;
     }
 
-    .os-step span {
-      color: rgba(255,255,255,.82);
-      font-size: 1.08rem;
+    .credential-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 28px;
+    }
+
+    .credential {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 18px;
+      padding: 19px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .credential h3 {
+      font-size: 1.04rem;
+      color: var(--maroon);
     }
 
     .fit-block {
       background: #111827;
       color: var(--white);
-      padding: 80px 24px;
     }
 
-    .fit-block h2 {
-      color: var(--yellow);
-      font-size: clamp(2.25rem, 5vw, 4rem);
-    }
+    .fit-block h2 { color: var(--yellow); }
 
-    .fit-grid {
+    .fit-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
@@ -558,37 +559,32 @@
     }
 
     .fit-panel {
-      border-radius: 26px;
-      padding: 30px;
       background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 30px;
     }
 
     .fit-panel p,
     .fit-panel li { color: rgba(255,255,255,.86); }
 
-    .fit-panel .checklist li {
-      border-bottom-color: rgba(255,255,255,.16);
+    .contrast-list {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
     }
 
-    .quote {
-      background: #fff8d7;
-      color: #111827;
-      border-left: 6px solid var(--yellow);
-      padding: 20px 22px;
-      border-radius: 14px;
-      font-weight: 800;
-      font-size: 1.16rem;
+    .contrast-list li {
+      border-top: 1px solid rgba(255,255,255,.18);
+      padding-top: 12px;
     }
 
     .cta {
-      background-color: #00192d;
-      background-image:
-        linear-gradient(rgba(0, 30, 50, .84), rgba(0, 30, 50, .84)),
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(242,223,116,.22), transparent 30%),
+        linear-gradient(135deg, var(--maroon), var(--blue-dark));
       color: var(--white);
       text-align: center;
     }
@@ -597,340 +593,368 @@
 
     .cta p {
       max-width: 760px;
-      margin: 0 auto 22px;
-      font-size: 1.08rem;
+      margin: 0 auto 24px;
+      color: rgba(255,255,255,.88);
+      font-size: 1.1rem;
     }
 
     footer {
-      background: #111827;
+      background: #0f1720;
       color: var(--white);
-      padding: 34px 24px;
       text-align: center;
+      padding: 34px 24px;
     }
 
-    footer a { color: var(--yellow); }
+    footer p { margin: 0 0 16px; }
 
     .footer-cta {
-      display: inline-block;
-      margin-top: 6px;
-      padding: 10px 18px;
-      border: 1px solid rgba(242,223,116,.65);
-      border-radius: 999px;
-      font-weight: 800;
+      display: inline-flex;
+      color: #111;
+      background: var(--yellow);
       text-decoration: none;
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-weight: 900;
     }
 
     @media (max-width: 1080px) {
+      :root { --header-offset: 112px; }
+
       .hero-inner,
-      .proof-layout,
-      .difference-wrap,
-      .fit-grid { grid-template-columns: 1fr; }
-
-      .headshot-wrap {
-        justify-self: start;
-        max-width: 320px;
-      }
-
-      .image-panel { min-height: 320px; }
-      .credential-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 980px) {
-      .routing-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 700px) {
-      :root { --header-offset: 120px; }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 14px;
-      }
-
-      .hero-inner { padding: 62px 20px; }
-      .hero { min-height: auto; }
-      section { padding: 58px 20px; }
-
-      .credential-rail { grid-template-columns: 1fr; }
-
-      .os-step {
+      .problem-box,
+      .demo-layout,
+      .fit-layout {
         grid-template-columns: 1fr;
-        gap: 10px;
       }
 
-      .os-number { font-size: 2rem; }
+      .hero-card {
+        max-width: 390px;
+      }
+
+      .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 820px) {
+      section { padding: 58px 20px; }
+      .nav { align-items: flex-start; }
+      .hero-inner { padding: 68px 20px 56px; }
+      .problem-grid,
+      .route-grid,
+      .work-grid,
+      .proof-grid,
+      .steps,
+      .credential-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: clamp(2.7rem, 12vw, 4rem); }
+
+      .button-row .btn { width: 100%; }
+
+      nav {
+        gap: 11px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
     <div class="nav">
-      <a class="logo" href="index.html">Leo Smith, DTM</a>
+      <a class="logo" href="index.html" aria-label="Leo Smith, DTM home">
+        Leo Smith
+        <span>DTM • practical communication systems</span>
+      </a>
+
       <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="leadership-speeches.html">Speeches</a>
         <a href="resources/index.html">Resources</a>
         <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact.html">Request a fit call</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="main">
+    <section class="hero">
       <div class="hero-inner">
         <div>
-          <div class="eyebrow">Speaker • Mentor • Toastmasters Leader • Systems Builder</div>
-          <h1 id="hero-title">Better Speaking. <span class="highlight">Stronger Leadership.</span> Less Guesswork.</h1>
-          <p>I help speakers, leaders, and Toastmasters clubs turn scattered ideas into clear messages, stronger delivery, useful feedback, and action people can actually use.</p>
+          <div class="eyebrow">For speakers, club officers, and volunteer leaders</div>
+
+          <h1>Stop making the room guess what you mean.</h1>
+
+          <p class="hero-lede">
+            I help you turn scattered ideas into clear speeches, practical training, stronger club messages, and meeting systems people can actually run.
+          </p>
 
           <div class="button-row">
-            <a class="btn btn-primary" href="#audiences">Explore Programs</a>
-            <a class="btn btn-secondary" href="contact.html">Start a Conversation</a>
+            <a class="btn btn-primary" href="contact.html">Request a 20-minute fit call</a>
+            <a class="btn btn-secondary" href="#ways">See ways to work together</a>
           </div>
 
-          <div class="hero-proofline">
-            Built for people who want clarity with structure — not motivational wallpaper with better lighting.
-          </div>
+          <p class="hero-note">
+            Bring the messy draft, stuck club message, workshop idea, or leadership problem. We will turn it into a clear next move.
+          </p>
         </div>
 
-        <aside class="headshot-wrap" aria-label="Leo Smith headshot and credibility summary">
-          <div class="headshot-card">
-            <img src="images/Leo_Smith.jpg" alt="Leo Smith, DTM">
-          </div>
-          <div class="caption-card">
-            <strong>Leo Smith, DTM</strong>
-            Practical communication. Real-world leadership. Systems that help people move.
-          </div>
+        <aside class="hero-card" aria-label="Leo Smith fit summary">
+          <img class="headshot" src="images/Leo_Smith.jpg" alt="Leo Smith, DTM">
+          <ul class="fit-list">
+            <li>Speech idea has good material but no spine</li>
+            <li>Club promotion feels random or invisible</li>
+            <li>Training needs to produce action, not applause</li>
+            <li>Meeting or project needs a cleaner run of show</li>
+          </ul>
         </aside>
       </div>
     </section>
 
-    <section id="audiences" aria-labelledby="audiences-title">
+    <section class="problem-strip" aria-label="Common problems">
+      <div class="wrap problem-box">
+        <h2>The problem is usually not effort. It is unclear structure.</h2>
+
+        <div class="problem-grid">
+          <div class="problem-item">The speech has stories, but no through-line.</div>
+          <div class="problem-item">The club posts, but guests still do not understand the value.</div>
+          <div class="problem-item">The meeting has activity, but not enough momentum.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="audiences">
       <div class="wrap center">
-        <h2 id="audiences-title">Choose the work you need done.</h2>
-        <p class="lead">The homepage has one job: route the right person to the right next step without making them solve a maze first.</p>
+        <h2>Choose the lane that fits.</h2>
+        <p class="lead">Three common entry points. Same operating principle: make the next action obvious.</p>
       </div>
 
-      <div class="wrap routing-grid">
-        <article class="route-card">
-          <div class="route-top" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
-            <div class="badge">For Speakers</div>
-          </div>
-          <div class="route-body">
-            <h3>Build a speech that has a point, a path, and a finish.</h3>
-            <p>Turn real experience into something clear, memorable, and usable from the platform.</p>
-            <div class="meta">
-              <span>Speech structure</span>
-              <span>Delivery</span>
-              <span>Confidence</span>
-            </div>
-            <div class="subfeature">
-              <small>Useful fits</small>
-              Talk Like a Caveman • Speaker Operating System • Evaluation-ready feedback
-            </div>
-            <a class="ghost-link" href="leadership-speeches.html">See speaking programs &rarr;</a>
-          </div>
+      <div class="wrap route-grid">
+        <article class="card">
+          <span class="tag">For Speakers</span>
+          <h3>Turn a raw idea into a speech people can follow.</h3>
+          <p>Clarify the point, build the path, sharpen the opening and close, and make the delivery easier to trust.</p>
+          <ul class="mini-list">
+            <li>Speech structure and message spine</li>
+            <li>Delivery notes and energy arc</li>
+            <li>Evaluation-ready improvement plan</li>
+          </ul>
+          <a class="card-link" href="leadership-speeches.html">See speaking support →</a>
         </article>
 
-        <article class="route-card">
-          <div class="route-top" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80');">
-            <div class="badge">For Clubs</div>
-          </div>
-          <div class="route-body">
-            <h3>Make the club easier to find, join, and sustain.</h3>
-            <p>Use practical tools for meeting flow, club PR, officer support, evaluation quality, and member experience.</p>
-            <div class="meta">
-              <span>PR</span>
-              <span>Meetings</span>
-              <span>Officer tools</span>
-            </div>
-            <div class="subfeature">
-              <small>Useful fits</small>
-              PR That Brings Guests • Club Visibility Formula • Recap and guest systems
-            </div>
-            <a class="ghost-link" href="resources/index.html">Explore club resources &rarr;</a>
-          </div>
+        <article class="card">
+          <span class="tag">For Clubs</span>
+          <h3>Make your club easier to understand before you ask people to join.</h3>
+          <p>Replace vague promotion with clear guest messaging, repeatable recap systems, and club visibility tools officers can use.</p>
+          <ul class="mini-list">
+            <li>Club positioning and PR rhythm</li>
+            <li>Guest invitation and follow-up language</li>
+            <li>Officer communication tools</li>
+          </ul>
+          <a class="card-link" href="resources/index.html">Explore club resources →</a>
         </article>
 
-        <article class="route-card">
-          <div class="route-top" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80');">
-            <div class="badge">For Leaders</div>
-          </div>
-          <div class="route-body">
-            <h3>Turn good intentions into visible action.</h3>
-            <p>Build workshops, run-of-show plans, and communication systems that help teams move with less waste.</p>
-            <div class="meta">
-              <span>Leadership</span>
-              <span>Execution</span>
-              <span>Workshops</span>
-            </div>
-            <div class="subfeature">
-              <small>Useful fits</small>
-              Run of Show planning • Your Calendar Is Telling on You • Practical leadership systems
-            </div>
-            <a class="ghost-link" href="contact.html">Talk with Leo &rarr;</a>
-          </div>
+        <article class="card">
+          <span class="tag">For Leaders</span>
+          <h3>Turn a scattered initiative into a plan people can run.</h3>
+          <p>Build practical workshops, meeting flows, run-of-show plans, and communication systems that reduce confusion.</p>
+          <ul class="mini-list">
+            <li>Run of show and handoff planning</li>
+            <li>Workshop flow and participant outcomes</li>
+            <li>Leadership communication cleanup</li>
+          </ul>
+          <a class="card-link" href="contact.html">Talk with Leo →</a>
         </article>
       </div>
     </section>
 
-    <section class="credential-anchor" aria-labelledby="credentials-title">
+    <section id="ways" class="offer">
+      <div class="wrap center">
+        <h2>Ways to work together</h2>
+        <p class="lead">Start with the problem. Match the format to the room. Keep the deliverable practical.</p>
+      </div>
+
+      <div class="wrap work-grid">
+        <article class="work-card">
+          <h3>Featured speech or club program</h3>
+          <p>A practical, story-driven talk or training segment for clubs, officer events, leadership meetings, or communication-focused groups.</p>
+          <ul class="mini-list">
+            <li>5-8 minute speech</li>
+            <li>15-30 minute focused training</li>
+            <li>30-45 minute interactive workshop</li>
+          </ul>
+        </article>
+
+        <article class="work-card">
+          <h3>Speech or workshop build session</h3>
+          <p>Bring the draft, notes, stories, or rough idea. Leave with a clearer structure, stronger delivery plan, and next version.</p>
+          <ul class="mini-list">
+            <li>Message diagnosis</li>
+            <li>Structure upgrade</li>
+            <li>Delivery and close refinement</li>
+          </ul>
+        </article>
+
+        <article class="work-card">
+          <h3>Club visibility tune-up</h3>
+          <p>For officers who need clearer promotion, stronger meeting recaps, better guest language, and a rhythm that survives real life.</p>
+          <ul class="mini-list">
+            <li>Guest-facing copy</li>
+            <li>PR content rhythm</li>
+            <li>Repeatable officer tools</li>
+          </ul>
+        </article>
+      </div>
+
       <div class="wrap">
-        <div class="credential-header">
-          <h2 id="credentials-title">Grounded credibility. No fog required.</h2>
-          <p>The hard proof sits here as an anchor: service, leadership, operations, and tools built for actual use.</p>
+        <p class="price-note">
+          Format, prep time, and pricing depend on audience, timing, travel, and deliverables. The first step is simple: send the situation, the audience, and the outcome you want.
+        </p>
+      </div>
+    </section>
+
+    <section class="gray">
+      <div class="wrap demo-layout">
+        <div class="demo-panel">
+          <h2>What you can inspect before you trust me</h2>
+          <p>
+            Until real field quotes are collected and approved, this page will not pretend to have testimonials. The trust bridge is concrete work: tools, outlines, systems, and examples you can actually look at.
+          </p>
+          <a class="btn btn-primary" href="resources/index.html">Browse the resource hub</a>
         </div>
 
-        <div class="credential-rail">
-          <article class="credential">
-            <h3>Distinguished Toastmaster</h3>
-            <p>Years of speaking, leadership, mentoring, education, and service inside Toastmasters.</p>
+        <div class="demo-list">
+          <article class="demo-item">
+            <h3><span>Speech</span> A stronger message spine</h3>
+            <p>We identify the one thing the audience should remember, the stories that earn it, and the ending that makes it land.</p>
           </article>
 
-          <article class="credential">
-            <h3>40+ years in print, mail, and production</h3>
-            <p>A systems-first approach shaped by operations, logistics, flow, and process improvement.</p>
+          <article class="demo-item">
+            <h3><span>Club PR</span> A clearer visibility rhythm</h3>
+            <p>We turn random promotion into a simple cycle: meeting moment, member story, skill spotlight, invitation, and follow-up.</p>
           </article>
 
-          <article class="credential">
-            <h3>Club and district leadership</h3>
-            <p>Hands-on experience supporting clubs, officers, training, promotion, and member growth.</p>
-          </article>
-
-          <article class="credential">
-            <h3>Practical resource builder</h3>
-            <p>Run-of-show tools, evaluation guides, delivery engines, club PR systems, and workshop structures.</p>
+          <article class="demo-item">
+            <h3><span>Execution</span> A run-of-show people can follow</h3>
+            <p>We map sequence, timing, ownership, handoffs, risks, and done means so the plan can survive contact with real humans.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="gray" aria-labelledby="proof-title">
-      <div class="wrap proof-layout">
-        <div class="proof-intro">
-          <h2 id="proof-title">Proof without the fog machine.</h2>
-          <p>No fake testimonials. No invented guru math. The proof is specific work that helps real rooms run better, speeches land cleaner, and clubs communicate with less guesswork.</p>
-          <p><strong>Next upgrade:</strong> add 2–3 verified field quotes here when you have the real words. The system is ready. The fog machine remains unplugged.</p>
-        </div>
+    <section>
+      <div class="wrap center">
+        <h2>How the work moves</h2>
+        <p class="lead">No giant discovery maze. We get clear, build the useful version, and decide the next action.</p>
+      </div>
 
-        <div class="proof-list">
-          <article class="field-proof">
-            <h3>Speeches leave with a shape.</h3>
-            <p>The work is not “sound more confident.” It is structure, flow, delivery choices, and a usable next version.</p>
-          </article>
+      <div class="wrap steps">
+        <article class="step">
+          <h3>Send the situation</h3>
+          <p>Tell me the audience, timing, current mess, and what needs to be different when the work is done.</p>
+        </article>
 
-          <article class="field-proof">
-            <h3>Club officers get tools they can repeat.</h3>
-            <p>Meeting recaps, guest-facing language, visibility systems, officer prompts, and practical templates that reduce friction.</p>
-          </article>
+        <article class="step">
+          <h3>Choose the right format</h3>
+          <p>Speech help, club training, visibility system, workshop flow, run of show, or a custom communication build.</p>
+        </article>
 
-          <article class="field-proof">
-            <h3>Projects get an operating rhythm.</h3>
-            <p>Run-of-show thinking turns scattered moving parts into ownership, sequence, timing, handoffs, risks, and done means.</p>
-          </article>
-        </div>
+        <article class="step">
+          <h3>Leave with the usable version</h3>
+          <p>The goal is not admiration. It is a speech, tool, plan, or message you can use in the room.</p>
+        </article>
       </div>
     </section>
 
-    <section aria-labelledby="difference-title">
-      <div class="wrap difference-wrap">
-        <div class="panel">
-          <h2 id="difference-title">What makes Leo different?</h2>
-          <p class="lead" style="margin-left:0;">The difference is not louder branding. It is the way the work gets built: clear, useful, structured, and human.</p>
-          <ul class="checklist">
-            <li><strong>Systems thinking:</strong> I do not just polish words. I build repeatable ways to make communication work.</li>
-            <li><strong>Real-world roots:</strong> decades in production, mail, operations, and leadership shape the way I teach.</li>
-            <li><strong>Toastmasters tested:</strong> speeches, workshops, evaluation tools, officer training, and club support all live in the real world.</li>
-            <li><strong>Useful over flashy:</strong> if the audience cannot use it later, it is not finished yet.</li>
-            <li><strong>Human voice:</strong> practical, clear, warm, and willing to use humor when it helps the point land.</li>
+    <section class="gray">
+      <div class="wrap center">
+        <h2>Credibility, without making you dig for it.</h2>
+        <p class="lead">Experience does not replace proof. But it does explain the lens: speechcraft, club service, practical systems, and operational clarity.</p>
+      </div>
+
+      <div class="wrap credential-grid">
+        <article class="credential">
+          <h3>Distinguished Toastmaster</h3>
+          <p>Speaking, mentoring, education, and leadership experience inside Toastmasters.</p>
+        </article>
+
+        <article class="credential">
+          <h3>Club and district leadership</h3>
+          <p>Hands-on support for club communication, officer work, training, recognition, and visibility.</p>
+        </article>
+
+        <article class="credential">
+          <h3>40+ years in production</h3>
+          <p>Print, mail, logistics, flow, process, and practical operations thinking.</p>
+        </article>
+
+        <article class="credential">
+          <h3>Reusable tool builder</h3>
+          <p>Run-of-show plans, evaluation guides, delivery systems, PR tools, and workshop structures.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="fit-block">
+      <div class="wrap fit-layout">
+        <div class="fit-panel">
+          <h2>Good fit</h2>
+          <ul class="contrast-list">
+            <li>You want a speech that sounds like you, only clearer.</li>
+            <li>Your club needs guests to understand why the meeting matters.</li>
+            <li>Your officers need tools simple enough to repeat.</li>
+            <li>Your workshop needs a takeaway people can use Monday night.</li>
           </ul>
         </div>
 
-        <div class="image-panel" role="img" aria-label="Workshop-style communication and leadership environment"></div>
-      </div>
-    </section>
-
-    <section class="ribbon" aria-labelledby="leo-os-title">
-      <div class="wrap">
-        <div class="center">
-          <h2 id="leo-os-title">The Leo OS way</h2>
-          <p class="lead">Clear beats clever. Specific beats vague. Action beats admiration.</p>
-        </div>
-
-        <div class="os-list">
-          <article class="os-step">
-            <div class="os-number">01</div>
-            <div>
-              <h3>Clarity</h3>
-              <span>Make the point easy to see before you decorate it.</span>
-            </div>
-          </article>
-
-          <article class="os-step">
-            <div class="os-number">02</div>
-            <div>
-              <h3>Structure</h3>
-              <span>Give the message a path so people can follow it.</span>
-            </div>
-          </article>
-
-          <article class="os-step">
-            <div class="os-number">03</div>
-            <div>
-              <h3>Usefulness</h3>
-              <span>Leave people with something they can actually use later.</span>
-            </div>
-          </article>
-
-          <article class="os-step">
-            <div class="os-number">04</div>
-            <div>
-              <h3>Follow-through</h3>
-              <span>Turn the good idea into visible action before it evaporates.</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="fit-block" aria-labelledby="fit-title">
-      <div class="wrap fit-grid">
         <div class="fit-panel">
-          <h2 id="fit-title">Who this is for</h2>
-          <p>My best fit is people and groups who want communication to get better in practical ways — not just sound impressive for one evening.</p>
-          <div class="quote">If you want motivational wallpaper, I am the wrong guy. If you want communication that is clear, memorable, and useful, we should probably talk.</div>
-        </div>
-
-        <div class="fit-panel">
-          <h2>Best-fit audiences</h2>
-          <ul class="checklist">
-            <li><strong>Toastmasters clubs</strong> looking for meaningful training or featured speaking.</li>
-            <li><strong>Speakers</strong> who want structure, delivery, and confidence tools.</li>
-            <li><strong>Club officers</strong> who need clearer systems and better promotion.</li>
-            <li><strong>Leaders and teams</strong> who want communication that produces action.</li>
+          <h2>Bad fit</h2>
+          <ul class="contrast-list">
+            <li>You want motivational wallpaper with a nicer font.</li>
+            <li>You want hype before clarity.</li>
+            <li>You want a complicated system nobody will maintain.</li>
+            <li>You want polish that hides the point.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="cta" aria-labelledby="cta-title">
+    <section class="cta">
       <div class="wrap">
-        <h2 id="cta-title">Let’s make the message clearer and the next step obvious.</h2>
-        <p>Whether you need a speech, workshop, club resource, or practical communication support, I can help you turn ideas into something people can understand, remember, and use.</p>
+        <h2>Bring the mess. We will find the message.</h2>
+        <p>
+          Send the speech, club challenge, training idea, or meeting problem. I will help you figure out the cleanest next step.
+        </p>
 
         <div class="button-row" style="justify-content:center;">
-          <a class="btn btn-primary" href="contact.html">Contact Leo</a>
-          <a class="btn btn-secondary" href="resources/index.html">Browse Resources</a>
+          <a class="btn btn-primary" href="contact.html">Request a 20-minute fit call</a>
+          <a class="btn btn-secondary" href="leadership-speeches.html">View speeches and workshops</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p><strong>Leo Smith, DTM</strong> &mdash; practical speaking systems, stronger leadership, useful action.</p>
-    <a class="footer-cta" href="contact.html" aria-label="Contact Leo Smith">Start a Conversation</a>
+    <p><strong>Leo Smith, DTM</strong> — clearer speeches, stronger club systems, practical communication that moves people.</p>
+    <a class="footer-cta" href="contact.html">Start a Conversation</a>
   </footer>
 </body>
 </html>
