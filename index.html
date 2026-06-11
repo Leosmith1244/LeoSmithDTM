@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leo Smith, DTM | Better Speaking. Stronger Leadership.</title>
   <meta name="description" content="Leo Smith, DTM helps speakers, leaders, and Toastmasters clubs turn scattered ideas into clear messages, stronger delivery, better evaluations, and visible action.">
+
   <style>
     :root {
       --maroon: #772432;
@@ -14,8 +15,11 @@
       --ink: #1f2933;
       --muted: #5f6b76;
       --white: #ffffff;
-      --shadow: 0 16px 38px rgba(0,0,0,.16);
+      --line: #e4e8eb;
+      --shadow: 0 16px 38px rgba(0,0,0,.14);
+      --soft-shadow: 0 10px 26px rgba(0,0,0,.07);
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -25,6 +29,7 @@
       background: var(--white);
       line-height: 1.6;
     }
+
     a { color: inherit; }
     header {
       background: rgba(0,65,101,.96);
@@ -35,6 +40,7 @@
       z-index: 100;
       backdrop-filter: blur(10px);
     }
+
     .nav {
       max-width: 1180px;
       margin: 0 auto;
@@ -44,44 +50,48 @@
       align-items: center;
       gap: 14px;
     }
+
     .logo {
       color: var(--yellow);
       font-weight: 800;
       font-size: 1.25rem;
       text-decoration: none;
     }
+
     nav a {
       color: var(--white);
       text-decoration: none;
       margin-left: 18px;
       font-weight: 700;
     }
+
     nav a:hover { color: var(--yellow); }
 
     .hero {
       position: relative;
-      min-height: 88vh;
       color: var(--white);
       display: flex;
       align-items: center;
       background:
-        linear-gradient(rgba(0, 25, 45, .66), rgba(119, 36, 50, .78)),
+        linear-gradient(rgba(0, 25, 45, .70), rgba(119, 36, 50, .80)),
         url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
       overflow: hidden;
     }
+
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at top right, rgba(242,223,116,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(242,223,116,.20), transparent 28%),
         radial-gradient(circle at bottom left, rgba(255,255,255,.08), transparent 24%);
       pointer-events: none;
     }
+
     .hero-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 90px 24px 80px;
+      padding: 96px 24px 84px;
       width: 100%;
       position: relative;
       z-index: 2;
@@ -90,6 +100,7 @@
       gap: 46px;
       align-items: center;
     }
+
     .eyebrow {
       display: inline-block;
       background: rgba(242,223,116,.18);
@@ -101,23 +112,28 @@
       letter-spacing: .03em;
       margin-bottom: 18px;
     }
+
     .hero h1 {
       font-size: clamp(2.8rem, 6vw, 5.35rem);
       line-height: 1.02;
       margin: 0 0 18px;
       max-width: 920px;
     }
+
     .hero p {
       max-width: 760px;
       font-size: 1.2rem;
       margin: 0 0 28px;
     }
+
     .highlight { color: var(--yellow); }
+
     .button-row {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
     }
+
     .btn {
       display: inline-block;
       padding: 13px 22px;
@@ -126,20 +142,31 @@
       text-decoration: none;
       transition: transform .15s ease, opacity .15s ease;
     }
+
     .btn:hover { transform: translateY(-1px); opacity: .96; }
+
     .btn-primary {
       background: var(--yellow);
       color: #111;
     }
+
     .btn-secondary {
       border: 2px solid rgba(255,255,255,.9);
       color: var(--white);
+    }
+
+    .hero-proofline {
+      margin-top: 22px;
+      color: rgba(255,255,255,.86);
+      max-width: 680px;
+      font-weight: 700;
     }
 
     .headshot-wrap {
       justify-self: center;
       width: min(340px, 100%);
     }
+
     .headshot-card {
       position: relative;
       background: rgba(255,255,255,.12);
@@ -149,6 +176,7 @@
       box-shadow: 0 24px 60px rgba(0,0,0,.32);
       backdrop-filter: blur(6px);
     }
+
     .headshot-card::before {
       content: "";
       position: absolute;
@@ -157,6 +185,7 @@
       border: 2px solid rgba(242,223,116,.34);
       pointer-events: none;
     }
+
     .headshot-card img {
       display: block;
       width: 100%;
@@ -164,6 +193,7 @@
       object-fit: cover;
       border-radius: 22px;
     }
+
     .caption-card {
       margin-top: 16px;
       background: rgba(0,65,101,.9);
@@ -172,84 +202,76 @@
       border-radius: 18px;
       padding: 16px;
     }
+
     .caption-card strong {
       display: block;
       color: var(--yellow);
       font-size: 1.05rem;
     }
 
-    .hero-grid {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      max-width: 900px;
-    }
-    .hero-card {
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 18px;
-      padding: 16px;
-      backdrop-filter: blur(5px);
-    }
-    .hero-card strong {
-      display: block;
-      color: var(--yellow);
-      margin-bottom: 6px;
-      font-size: 1.05rem;
-    }
+    section { padding: 76px 24px; }
 
-    section { padding: 72px 24px; }
     .wrap {
       max-width: 1180px;
       margin: 0 auto;
     }
+
     .center { text-align: center; }
+
     h2 {
       color: var(--maroon);
-      font-size: 2.2rem;
-      line-height: 1.14;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.08;
       margin: 0 0 16px;
     }
+
     h3 {
       color: var(--blue);
       margin-top: 0;
+      line-height: 1.2;
     }
+
     .lead {
       max-width: 820px;
-      margin: 0 auto 30px;
+      margin: 0 auto 34px;
       color: var(--muted);
       font-size: 1.08rem;
     }
+
     .gray { background: var(--gray); }
 
-    .grid {
+    .routing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
+      margin-top: 10px;
     }
-    .card {
-      background: var(--white);
-      border: 1px solid #e4e8eb;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-    .card-body { padding: 22px; }
-    .card p { color: var(--muted); }
 
-    .thumb {
-      height: 220px;
+    .route-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .route-top {
+      min-height: 176px;
       background-size: cover;
       background-position: center;
       position: relative;
     }
-    .thumb::after {
+
+    .route-top::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.56), rgba(0,0,0,.08));
+      background: linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.12));
     }
+
     .badge {
       position: absolute;
       z-index: 2;
@@ -262,12 +284,23 @@
       padding: 7px 12px;
       font-size: .85rem;
     }
+
+    .route-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .route-body p { color: var(--muted); }
+
     .meta {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin: 14px 0 18px;
+      margin: 14px 0 20px;
     }
+
     .meta span {
       font-size: .88rem;
       font-weight: 700;
@@ -276,10 +309,77 @@
       padding: 7px 10px;
       border-radius: 999px;
     }
+
+    .subfeature {
+      border-top: 1px solid var(--line);
+      margin-top: auto;
+      padding-top: 16px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .subfeature small {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 4px;
+    }
+
     .ghost-link {
+      display: inline-block;
+      margin-top: 18px;
       text-decoration: none;
       font-weight: 800;
       color: var(--maroon);
+    }
+
+    .proof-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .proof-intro {
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .proof-intro h2 {
+      color: var(--yellow);
+      font-size: clamp(2rem, 3vw, 2.85rem);
+    }
+
+    .proof-intro p { color: rgba(255,255,255,.9); }
+
+    .proof-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .field-proof {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .field-proof strong {
+      display: block;
+      color: var(--blue);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .field-proof p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .split {
@@ -288,13 +388,15 @@
       gap: 28px;
       align-items: center;
     }
+
     .panel {
       background: var(--white);
       border-radius: 24px;
-      padding: 28px;
+      padding: 30px;
       box-shadow: var(--shadow);
-      border: 1px solid #e4e8eb;
+      border: 1px solid var(--line);
     }
+
     .image-panel {
       min-height: 460px;
       border-radius: 26px;
@@ -303,67 +405,123 @@
         url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
       box-shadow: var(--shadow);
     }
+
     .checklist {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     .checklist li {
       padding: 12px 0;
       border-bottom: 1px solid #e7ecef;
     }
+
     .checklist li:last-child { border-bottom: none; }
     .checklist strong { color: var(--blue); }
 
-    .proof-grid {
+    .credential-rail {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 28px;
+      gap: 14px;
     }
-    .proof {
+
+    .credential {
       background: #fff;
-      border: 1px solid #e4e8eb;
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--soft-shadow);
     }
-    .proof strong {
+
+    .credential strong {
       display: block;
-      font-size: 1.15rem;
-      color: var(--blue);
-      margin-bottom: 8px;
+      color: var(--maroon);
+      font-size: 1.1rem;
     }
 
     .ribbon {
       background: linear-gradient(135deg, var(--blue), var(--maroon));
       color: var(--white);
     }
+
     .ribbon h2 { color: var(--yellow); }
-    .mini-grid {
+    .ribbon .lead { color: rgba(255,255,255,.88); }
+
+    .os-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
+      gap: 18px;
+      margin-top: 34px;
     }
-    .mini {
-      border-radius: 18px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
-      padding: 18px;
+
+    .os-step {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 22px 0;
+      border-top: 1px solid rgba(255,255,255,.22);
     }
-    .mini strong {
+
+    .os-step:last-child {
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+
+    .os-number {
       color: var(--yellow);
-      display: block;
-      margin-bottom: 8px;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
     }
+
+    .os-step strong {
+      display: block;
+      color: var(--white);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      line-height: 1.05;
+      margin-bottom: 4px;
+    }
+
+    .os-step span {
+      color: rgba(255,255,255,.82);
+      font-size: 1.08rem;
+    }
+
+    .fit-block {
+      background: #111827;
+      color: var(--white);
+      padding: 80px 24px;
+    }
+
+    .fit-block h2 {
+      color: var(--yellow);
+      font-size: clamp(2.25rem, 5vw, 4rem);
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .fit-panel {
+      border-radius: 26px;
+      padding: 30px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .fit-panel p,
+    .fit-panel li { color: rgba(255,255,255,.86); }
 
     .quote {
       background: #fff8d7;
+      color: #111827;
       border-left: 6px solid var(--yellow);
       padding: 20px 22px;
       border-radius: 14px;
-      font-weight: 700;
+      font-weight: 800;
+      font-size: 1.16rem;
     }
 
     .cta {
@@ -373,7 +531,9 @@
       color: var(--white);
       text-align: center;
     }
+
     .cta h2 { color: var(--yellow); }
+
     .cta p {
       max-width: 760px;
       margin: 0 auto 22px;
@@ -386,22 +546,44 @@
       padding: 30px 24px;
       text-align: center;
     }
+
     footer a { color: var(--yellow); }
-    .small { color: rgba(255,255,255,.78); font-size: .95rem; }
 
     @media (max-width: 980px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .headshot-wrap { justify-self: start; max-width: 320px; }
-      .split { grid-template-columns: 1fr; }
+      .hero-inner,
+      .split,
+      .proof-layout,
+      .fit-grid { grid-template-columns: 1fr; }
+
+      .headshot-wrap {
+        justify-self: start;
+        max-width: 320px;
+      }
+
       .image-panel { min-height: 320px; }
+      .routing-grid { grid-template-columns: 1fr; }
     }
+
     @media (max-width: 700px) {
-      nav a { margin-left: 0; margin-right: 14px; }
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+
       .hero-inner { padding: 62px 20px; }
       .hero { min-height: auto; }
+      section { padding: 58px 20px; }
+
+      .os-step {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .os-number { font-size: 2rem; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="nav">
@@ -423,28 +605,14 @@
           <div class="eyebrow">Speaker • Mentor • Toastmasters Leader • Systems Builder</div>
           <h1>Better Speaking. <span class="highlight">Stronger Leadership.</span> Less Guesswork.</h1>
           <p>I help speakers, leaders, and Toastmasters clubs turn scattered ideas into clear messages, stronger delivery, useful feedback, and action people can actually use.</p>
+
           <div class="button-row">
-            <a class="btn btn-primary" href="leadership-speeches.html">Explore Programs</a>
+            <a class="btn btn-primary" href="#audiences">Explore Programs</a>
             <a class="btn btn-secondary" href="contact.html">Start a Conversation</a>
           </div>
 
-          <div class="hero-grid">
-            <div class="hero-card">
-              <strong>DTM</strong>
-              Distinguished Toastmaster
-            </div>
-            <div class="hero-card">
-              <strong>40+ years</strong>
-              Print, mail, production, and operations experience
-            </div>
-            <div class="hero-card">
-              <strong>Practical systems</strong>
-              Speech, evaluation, PR, and execution tools
-            </div>
-            <div class="hero-card">
-              <strong>Built for use</strong>
-              Clear, memorable, and actually useful
-            </div>
+          <div class="hero-proofline">
+            Built for people who want clarity with structure — not motivational wallpaper with better lighting.
           </div>
         </div>
 
@@ -460,55 +628,68 @@
       </div>
     </section>
 
-    <section>
+    <section id="audiences">
       <div class="wrap center">
-        <h2>What I help people do</h2>
-        <p class="lead">My lane is not generic inspiration. It is turning ideas into language, structure, and tools that help people communicate better and lead more clearly.</p>
+        <h2>Choose the work you need done.</h2>
+        <p class="lead">The homepage has one job: route the right person to the right next step without making them solve a maze first.</p>
       </div>
-      <div class="wrap grid">
-        <article class="card">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
+
+      <div class="wrap routing-grid">
+        <article class="route-card">
+          <div class="route-top" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
             <div class="badge">For Speakers</div>
           </div>
-          <div class="card-body">
-            <h3>Build clearer speeches</h3>
-            <p>Turn real experience into speeches that have a point, a path, and a finish people remember.</p>
+          <div class="route-body">
+            <h3>Build a speech that has a point, a path, and a finish.</h3>
+            <p>Turn real experience into something clear, memorable, and usable from the platform.</p>
             <div class="meta">
               <span>Speech structure</span>
               <span>Delivery</span>
               <span>Confidence</span>
             </div>
+            <div class="subfeature">
+              <small>Useful fits</small>
+              Talk Like a Caveman • Speaker Operating System • Evaluation-ready feedback
+            </div>
             <a class="ghost-link" href="leadership-speeches.html">See speaking programs &rarr;</a>
           </div>
         </article>
 
-        <article class="card">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80');">
+        <article class="route-card">
+          <div class="route-top" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80');">
             <div class="badge">For Clubs</div>
           </div>
-          <div class="card-body">
-            <h3>Strengthen club systems</h3>
+          <div class="route-body">
+            <h3>Make the club easier to find, join, and sustain.</h3>
             <p>Use practical tools for meeting flow, club PR, officer support, evaluation quality, and member experience.</p>
             <div class="meta">
               <span>PR</span>
               <span>Meetings</span>
               <span>Officer tools</span>
             </div>
-            <a class="ghost-link" href="resources/index.html">Explore resources &rarr;</a>
+            <div class="subfeature">
+              <small>Useful fits</small>
+              PR That Brings Guests • Club Visibility Formula • Recap and guest systems
+            </div>
+            <a class="ghost-link" href="resources/index.html">Explore club resources &rarr;</a>
           </div>
         </article>
 
-        <article class="card">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80');">
+        <article class="route-card">
+          <div class="route-top" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80');">
             <div class="badge">For Leaders</div>
           </div>
-          <div class="card-body">
-            <h3>Turn ideas into action</h3>
-            <p>Build workshops, run of show plans, and communication systems that help teams move with more clarity and less waste.</p>
+          <div class="route-body">
+            <h3>Turn good intentions into visible action.</h3>
+            <p>Build workshops, run-of-show plans, and communication systems that help teams move with less waste.</p>
             <div class="meta">
               <span>Leadership</span>
               <span>Execution</span>
               <span>Workshops</span>
+            </div>
+            <div class="subfeature">
+              <small>Useful fits</small>
+              Run of Show planning • Your Calendar Is Telling on You • Practical leadership systems
             </div>
             <a class="ghost-link" href="contact.html">Talk with Leo &rarr;</a>
           </div>
@@ -517,26 +698,28 @@
     </section>
 
     <section class="gray">
-      <div class="wrap center">
-        <h2>Credibility without the fog machine</h2>
-        <p class="lead">No fake testimonials. No made-up guru numbers. Just the practical proof that matters: experience, service, systems, and useful work.</p>
-      </div>
-      <div class="wrap proof-grid">
-        <div class="proof">
-          <strong>Distinguished Toastmaster</strong>
-          Years of speaking, leadership, mentoring, education, and service inside Toastmasters.
+      <div class="wrap proof-layout">
+        <div class="proof-intro">
+          <h2>Proof without the fog machine.</h2>
+          <p>No fake testimonials. No invented guru math. The proof is specific work that helps real rooms run better, speeches land cleaner, and clubs communicate with less guesswork.</p>
+          <p><strong>Next upgrade:</strong> add 2–3 verified field quotes here when you have the real words. The system is ready. The fog machine remains unplugged.</p>
         </div>
-        <div class="proof">
-          <strong>Club and district leadership</strong>
-          Hands-on experience supporting clubs, officers, training, promotion, and member growth.
-        </div>
-        <div class="proof">
-          <strong>Production and operations background</strong>
-          A systems-first approach shaped by decades in print, mail, logistics, and process improvement.
-        </div>
-        <div class="proof">
-          <strong>Practical resource builder</strong>
-          Run-of-show tools, evaluation guides, delivery engines, club PR systems, and workshop structures.
+
+        <div class="proof-list">
+          <div class="field-proof">
+            <strong>Speeches leave with a shape.</strong>
+            <p>The work is not “sound more confident.” It is structure, flow, delivery choices, and a usable next version.</p>
+          </div>
+
+          <div class="field-proof">
+            <strong>Club officers get tools they can repeat.</strong>
+            <p>Meeting recaps, guest-facing language, visibility systems, officer prompts, and practical templates that reduce friction.</p>
+          </div>
+
+          <div class="field-proof">
+            <strong>Projects get an operating rhythm.</strong>
+            <p>Run-of-show thinking turns scattered moving parts into ownership, sequence, timing, handoffs, risks, and done means.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -553,63 +736,25 @@
             <li><strong>Human voice:</strong> practical, clear, warm, and willing to use humor when it helps the point land.</li>
           </ul>
         </div>
-        <div class="image-panel" aria-hidden="true"></div>
-      </div>
-    </section>
 
-    <section>
-      <div class="wrap center">
-        <h2>Featured programs</h2>
-        <p class="lead">A few of the signature talks and workshops that help people remember the message and do something with it later.</p>
-      </div>
-      <div class="wrap grid">
-        <article class="card">
-          <div class="thumb" style="background-image:url('images/talk-like-a-caveman.png');">
-            <div class="badge">Signature Speech</div>
+        <div class="credential-rail" aria-label="Credibility highlights">
+          <div class="credential">
+            <strong>Distinguished Toastmaster</strong>
+            Years of speaking, leadership, mentoring, education, and service inside Toastmasters.
           </div>
-          <div class="card-body">
-            <h3>Talk Like a Caveman</h3>
-            <p>Strip the message down. Make it concrete. Make it stick.</p>
-            <div class="meta">
-              <span>Speech</span>
-              <span>Humor + insight</span>
-              <span>Memorable</span>
-            </div>
-            <a class="ghost-link" href="talk-like-a-caveman.html">View detail page &rarr;</a>
+          <div class="credential">
+            <strong>40+ years in print, mail, and production</strong>
+            A systems-first approach shaped by operations, logistics, flow, and process improvement.
           </div>
-        </article>
-
-        <article class="card">
-          <div class="thumb" style="background-image:url('images/your-calendar-is-telling-on-you.png');">
-            <div class="badge">Leadership</div>
+          <div class="credential">
+            <strong>Club and district leadership</strong>
+            Hands-on experience supporting clubs, officers, training, promotion, and member growth.
           </div>
-          <div class="card-body">
-            <h3>Your Calendar Is Telling on You</h3>
-            <p>Your schedule is not just a plan. It is a confession.</p>
-            <div class="meta">
-              <span>Leadership</span>
-              <span>Story-driven</span>
-              <span>Practical</span>
-            </div>
-            <a class="ghost-link" href="your-calendar-is-telling-on-you.html">View detail page &rarr;</a>
+          <div class="credential">
+            <strong>Practical resource builder</strong>
+            Run-of-show tools, evaluation guides, delivery engines, club PR systems, and workshop structures.
           </div>
-        </article>
-
-        <article class="card">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80');">
-            <div class="badge">Workshop</div>
-          </div>
-          <div class="card-body">
-            <h3>PR That Brings Guests</h3>
-            <p>Random posts do not build visibility. Specific stories do.</p>
-            <div class="meta">
-              <span>Club PR</span>
-              <span>Visibility</span>
-              <span>Growth</span>
-            </div>
-            <a class="ghost-link" href="pr-that-brings-guests.html">View detail page &rarr;</a>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
@@ -617,37 +762,54 @@
       <div class="wrap">
         <div class="center">
           <h2>The Leo OS way</h2>
-          <p class="lead" style="color: rgba(255,255,255,.9);">Clear beats clever. Specific beats vague. Action beats admiration.</p>
+          <p class="lead">Clear beats clever. Specific beats vague. Action beats admiration.</p>
         </div>
-        <div class="mini-grid">
-          <div class="mini">
-            <strong>Clarity</strong>
-            Make the point easy to see.
+
+        <div class="os-list">
+          <div class="os-step">
+            <div class="os-number">01</div>
+            <div>
+              <strong>Clarity</strong>
+              <span>Make the point easy to see before you decorate it.</span>
+            </div>
           </div>
-          <div class="mini">
-            <strong>Structure</strong>
-            Give the message a path.
+
+          <div class="os-step">
+            <div class="os-number">02</div>
+            <div>
+              <strong>Structure</strong>
+              <span>Give the message a path so people can follow it.</span>
+            </div>
           </div>
-          <div class="mini">
-            <strong>Usefulness</strong>
-            Help people do something with it.
+
+          <div class="os-step">
+            <div class="os-number">03</div>
+            <div>
+              <strong>Usefulness</strong>
+              <span>Leave people with something they can actually use later.</span>
+            </div>
           </div>
-          <div class="mini">
-            <strong>Follow-through</strong>
-            Turn ideas into visible action.
+
+          <div class="os-step">
+            <div class="os-number">04</div>
+            <div>
+              <strong>Follow-through</strong>
+              <span>Turn the good idea into visible action before it evaporates.</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap split">
-        <div class="panel">
+    <section class="fit-block">
+      <div class="wrap fit-grid">
+        <div class="fit-panel">
           <h2>Who this is for</h2>
           <p>My best fit is people and groups who want communication to get better in practical ways — not just sound impressive for one evening.</p>
           <div class="quote">If you want motivational wallpaper, I am the wrong guy. If you want communication that is clear, memorable, and useful, we should probably talk.</div>
         </div>
-        <div class="panel">
+
+        <div class="fit-panel">
           <h2>Best-fit audiences</h2>
           <ul class="checklist">
             <li><strong>Toastmasters clubs</strong> looking for meaningful training or featured speaking.</li>
@@ -663,11 +825,11 @@
       <div class="wrap">
         <h2>Let’s make the message clearer and the next step obvious.</h2>
         <p>Whether you need a speech, workshop, club resource, or practical communication support, I can help you turn ideas into something people can understand, remember, and use.</p>
+
         <div class="button-row" style="justify-content:center;">
           <a class="btn btn-primary" href="contact.html">Contact Leo</a>
           <a class="btn btn-secondary" href="resources/index.html">Browse Resources</a>
         </div>
-        <p class="small" style="margin-top:18px;">This page references your headshot at <strong>images/Leo_Smith.jpg</strong>.</p>
       </div>
     </section>
   </main>
