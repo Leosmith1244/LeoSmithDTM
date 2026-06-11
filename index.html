@@ -18,10 +18,16 @@
       --line: #e4e8eb;
       --shadow: 0 16px 38px rgba(0,0,0,.14);
       --soft-shadow: 0 10px 26px rgba(0,0,0,.07);
+      --header-offset: 88px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-offset);
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -31,6 +37,7 @@
     }
 
     a { color: inherit; }
+
     header {
       background: rgba(0,65,101,.96);
       color: var(--white);
@@ -65,16 +72,21 @@
       font-weight: 700;
     }
 
-    nav a:hover { color: var(--yellow); }
+    nav a:hover,
+    nav a:focus { color: var(--yellow); }
 
     .hero {
       position: relative;
       color: var(--white);
       display: flex;
       align-items: center;
-      background:
+      background-color: #00192d;
+      background-image:
         linear-gradient(rgba(0, 25, 45, .70), rgba(119, 36, 50, .80)),
-        url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       overflow: hidden;
     }
 
@@ -96,8 +108,8 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
-      gap: 46px;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+      gap: clamp(28px, 4vw, 54px);
       align-items: center;
     }
 
@@ -143,7 +155,11 @@
       transition: transform .15s ease, opacity .15s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); opacity: .96; }
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-1px);
+      opacity: .96;
+    }
 
     .btn-primary {
       background: var(--yellow);
@@ -260,6 +276,7 @@
 
     .route-top {
       min-height: 176px;
+      background-color: var(--blue);
       background-size: cover;
       background-position: center;
       position: relative;
@@ -335,6 +352,58 @@
       color: var(--maroon);
     }
 
+    .credential-anchor {
+      padding-top: 40px;
+      padding-bottom: 44px;
+      background: var(--white);
+    }
+
+    .credential-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .credential-header h2 {
+      font-size: clamp(1.75rem, 3vw, 2.65rem);
+      margin: 0;
+    }
+
+    .credential-header p {
+      max-width: 540px;
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .credential-rail {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .credential {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .credential h3 {
+      color: var(--maroon);
+      font-size: 1.08rem;
+      margin: 0 0 8px;
+    }
+
+    .credential p {
+      margin: 0;
+      color: var(--muted);
+    }
+
     .proof-layout {
       display: grid;
       grid-template-columns: .8fr 1.2fr;
@@ -370,11 +439,10 @@
       box-shadow: var(--soft-shadow);
     }
 
-    .field-proof strong {
-      display: block;
+    .field-proof h3 {
       color: var(--blue);
       font-size: 1.15rem;
-      margin-bottom: 8px;
+      margin: 0 0 8px;
     }
 
     .field-proof p {
@@ -382,11 +450,11 @@
       color: var(--muted);
     }
 
-    .split {
+    .difference-wrap {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
       gap: 28px;
-      align-items: center;
+      align-items: stretch;
     }
 
     .panel {
@@ -400,9 +468,13 @@
     .image-panel {
       min-height: 460px;
       border-radius: 26px;
-      background:
+      background-color: #e8eef1;
+      background-image:
         linear-gradient(rgba(0,65,101,.12), rgba(119,36,50,.18)),
-        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       box-shadow: var(--shadow);
     }
 
@@ -419,25 +491,6 @@
 
     .checklist li:last-child { border-bottom: none; }
     .checklist strong { color: var(--blue); }
-
-    .credential-rail {
-      display: grid;
-      gap: 14px;
-    }
-
-    .credential {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--soft-shadow);
-    }
-
-    .credential strong {
-      display: block;
-      color: var(--maroon);
-      font-size: 1.1rem;
-    }
 
     .ribbon {
       background: linear-gradient(135deg, var(--blue), var(--maroon));
@@ -473,12 +526,12 @@
       line-height: 1;
     }
 
-    .os-step strong {
+    .os-step h3 {
       display: block;
       color: var(--white);
       font-size: clamp(1.5rem, 3vw, 2.25rem);
       line-height: 1.05;
-      margin-bottom: 4px;
+      margin: 0 0 4px;
     }
 
     .os-step span {
@@ -514,6 +567,10 @@
     .fit-panel p,
     .fit-panel li { color: rgba(255,255,255,.86); }
 
+    .fit-panel .checklist li {
+      border-bottom-color: rgba(255,255,255,.16);
+    }
+
     .quote {
       background: #fff8d7;
       color: #111827;
@@ -525,9 +582,13 @@
     }
 
     .cta {
-      background:
+      background-color: #00192d;
+      background-image:
         linear-gradient(rgba(0, 30, 50, .84), rgba(0, 30, 50, .84)),
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       color: var(--white);
       text-align: center;
     }
@@ -543,16 +604,26 @@
     footer {
       background: #111827;
       color: var(--white);
-      padding: 30px 24px;
+      padding: 34px 24px;
       text-align: center;
     }
 
     footer a { color: var(--yellow); }
 
-    @media (max-width: 980px) {
+    .footer-cta {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 10px 18px;
+      border: 1px solid rgba(242,223,116,.65);
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1080px) {
       .hero-inner,
-      .split,
       .proof-layout,
+      .difference-wrap,
       .fit-grid { grid-template-columns: 1fr; }
 
       .headshot-wrap {
@@ -561,10 +632,16 @@
       }
 
       .image-panel { min-height: 320px; }
+      .credential-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 980px) {
       .routing-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
+      :root { --header-offset: 120px; }
+
       nav a {
         margin-left: 0;
         margin-right: 14px;
@@ -573,6 +650,8 @@
       .hero-inner { padding: 62px 20px; }
       .hero { min-height: auto; }
       section { padding: 58px 20px; }
+
+      .credential-rail { grid-template-columns: 1fr; }
 
       .os-step {
         grid-template-columns: 1fr;
@@ -599,11 +678,11 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <div>
           <div class="eyebrow">Speaker • Mentor • Toastmasters Leader • Systems Builder</div>
-          <h1>Better Speaking. <span class="highlight">Stronger Leadership.</span> Less Guesswork.</h1>
+          <h1 id="hero-title">Better Speaking. <span class="highlight">Stronger Leadership.</span> Less Guesswork.</h1>
           <p>I help speakers, leaders, and Toastmasters clubs turn scattered ideas into clear messages, stronger delivery, useful feedback, and action people can actually use.</p>
 
           <div class="button-row">
@@ -628,9 +707,9 @@
       </div>
     </section>
 
-    <section id="audiences">
+    <section id="audiences" aria-labelledby="audiences-title">
       <div class="wrap center">
-        <h2>Choose the work you need done.</h2>
+        <h2 id="audiences-title">Choose the work you need done.</h2>
         <p class="lead">The homepage has one job: route the right person to the right next step without making them solve a maze first.</p>
       </div>
 
@@ -697,37 +776,69 @@
       </div>
     </section>
 
-    <section class="gray">
+    <section class="credential-anchor" aria-labelledby="credentials-title">
+      <div class="wrap">
+        <div class="credential-header">
+          <h2 id="credentials-title">Grounded credibility. No fog required.</h2>
+          <p>The hard proof sits here as an anchor: service, leadership, operations, and tools built for actual use.</p>
+        </div>
+
+        <div class="credential-rail">
+          <article class="credential">
+            <h3>Distinguished Toastmaster</h3>
+            <p>Years of speaking, leadership, mentoring, education, and service inside Toastmasters.</p>
+          </article>
+
+          <article class="credential">
+            <h3>40+ years in print, mail, and production</h3>
+            <p>A systems-first approach shaped by operations, logistics, flow, and process improvement.</p>
+          </article>
+
+          <article class="credential">
+            <h3>Club and district leadership</h3>
+            <p>Hands-on experience supporting clubs, officers, training, promotion, and member growth.</p>
+          </article>
+
+          <article class="credential">
+            <h3>Practical resource builder</h3>
+            <p>Run-of-show tools, evaluation guides, delivery engines, club PR systems, and workshop structures.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gray" aria-labelledby="proof-title">
       <div class="wrap proof-layout">
         <div class="proof-intro">
-          <h2>Proof without the fog machine.</h2>
+          <h2 id="proof-title">Proof without the fog machine.</h2>
           <p>No fake testimonials. No invented guru math. The proof is specific work that helps real rooms run better, speeches land cleaner, and clubs communicate with less guesswork.</p>
           <p><strong>Next upgrade:</strong> add 2–3 verified field quotes here when you have the real words. The system is ready. The fog machine remains unplugged.</p>
         </div>
 
         <div class="proof-list">
-          <div class="field-proof">
-            <strong>Speeches leave with a shape.</strong>
+          <article class="field-proof">
+            <h3>Speeches leave with a shape.</h3>
             <p>The work is not “sound more confident.” It is structure, flow, delivery choices, and a usable next version.</p>
-          </div>
+          </article>
 
-          <div class="field-proof">
-            <strong>Club officers get tools they can repeat.</strong>
+          <article class="field-proof">
+            <h3>Club officers get tools they can repeat.</h3>
             <p>Meeting recaps, guest-facing language, visibility systems, officer prompts, and practical templates that reduce friction.</p>
-          </div>
+          </article>
 
-          <div class="field-proof">
-            <strong>Projects get an operating rhythm.</strong>
+          <article class="field-proof">
+            <h3>Projects get an operating rhythm.</h3>
             <p>Run-of-show thinking turns scattered moving parts into ownership, sequence, timing, handoffs, risks, and done means.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap split">
+    <section aria-labelledby="difference-title">
+      <div class="wrap difference-wrap">
         <div class="panel">
-          <h2>What makes Leo different?</h2>
+          <h2 id="difference-title">What makes Leo different?</h2>
+          <p class="lead" style="margin-left:0;">The difference is not louder branding. It is the way the work gets built: clear, useful, structured, and human.</p>
           <ul class="checklist">
             <li><strong>Systems thinking:</strong> I do not just polish words. I build repeatable ways to make communication work.</li>
             <li><strong>Real-world roots:</strong> decades in production, mail, operations, and leadership shape the way I teach.</li>
@@ -737,74 +848,57 @@
           </ul>
         </div>
 
-        <div class="credential-rail" aria-label="Credibility highlights">
-          <div class="credential">
-            <strong>Distinguished Toastmaster</strong>
-            Years of speaking, leadership, mentoring, education, and service inside Toastmasters.
-          </div>
-          <div class="credential">
-            <strong>40+ years in print, mail, and production</strong>
-            A systems-first approach shaped by operations, logistics, flow, and process improvement.
-          </div>
-          <div class="credential">
-            <strong>Club and district leadership</strong>
-            Hands-on experience supporting clubs, officers, training, promotion, and member growth.
-          </div>
-          <div class="credential">
-            <strong>Practical resource builder</strong>
-            Run-of-show tools, evaluation guides, delivery engines, club PR systems, and workshop structures.
-          </div>
-        </div>
+        <div class="image-panel" role="img" aria-label="Workshop-style communication and leadership environment"></div>
       </div>
     </section>
 
-    <section class="ribbon">
+    <section class="ribbon" aria-labelledby="leo-os-title">
       <div class="wrap">
         <div class="center">
-          <h2>The Leo OS way</h2>
+          <h2 id="leo-os-title">The Leo OS way</h2>
           <p class="lead">Clear beats clever. Specific beats vague. Action beats admiration.</p>
         </div>
 
         <div class="os-list">
-          <div class="os-step">
+          <article class="os-step">
             <div class="os-number">01</div>
             <div>
-              <strong>Clarity</strong>
+              <h3>Clarity</h3>
               <span>Make the point easy to see before you decorate it.</span>
             </div>
-          </div>
+          </article>
 
-          <div class="os-step">
+          <article class="os-step">
             <div class="os-number">02</div>
             <div>
-              <strong>Structure</strong>
+              <h3>Structure</h3>
               <span>Give the message a path so people can follow it.</span>
             </div>
-          </div>
+          </article>
 
-          <div class="os-step">
+          <article class="os-step">
             <div class="os-number">03</div>
             <div>
-              <strong>Usefulness</strong>
+              <h3>Usefulness</h3>
               <span>Leave people with something they can actually use later.</span>
             </div>
-          </div>
+          </article>
 
-          <div class="os-step">
+          <article class="os-step">
             <div class="os-number">04</div>
             <div>
-              <strong>Follow-through</strong>
+              <h3>Follow-through</h3>
               <span>Turn the good idea into visible action before it evaporates.</span>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="fit-block">
+    <section class="fit-block" aria-labelledby="fit-title">
       <div class="wrap fit-grid">
         <div class="fit-panel">
-          <h2>Who this is for</h2>
+          <h2 id="fit-title">Who this is for</h2>
           <p>My best fit is people and groups who want communication to get better in practical ways — not just sound impressive for one evening.</p>
           <div class="quote">If you want motivational wallpaper, I am the wrong guy. If you want communication that is clear, memorable, and useful, we should probably talk.</div>
         </div>
@@ -821,9 +915,9 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="cta" aria-labelledby="cta-title">
       <div class="wrap">
-        <h2>Let’s make the message clearer and the next step obvious.</h2>
+        <h2 id="cta-title">Let’s make the message clearer and the next step obvious.</h2>
         <p>Whether you need a speech, workshop, club resource, or practical communication support, I can help you turn ideas into something people can understand, remember, and use.</p>
 
         <div class="button-row" style="justify-content:center;">
@@ -836,7 +930,7 @@
 
   <footer>
     <p><strong>Leo Smith, DTM</strong> &mdash; practical speaking systems, stronger leadership, useful action.</p>
-    <p><a href="contact.html">Contact Leo</a></p>
+    <a class="footer-cta" href="contact.html" aria-label="Contact Leo Smith">Start a Conversation</a>
   </footer>
 </body>
 </html>
